@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../CSS/bootstrap.min.css">
   <link rel="stylesheet" href="../CSS/Style.css" />
-  <script src="../JS/bootstrap.min.js"></script>
   <script src="../JS/Script.js"></script>
   <script src="https://kit.fontawesome.com/d267781e5c.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="../Img/icono-js.jpg">
@@ -1496,9 +1495,12 @@
                 </div>
                 <p id="res-eje55"></p>
                 <div class="reload">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" id="eje55_reload" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-chevron-double-left" id="eje55_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd"
+                      d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                   </svg>
                 </div>
               </div>
@@ -1523,12 +1525,26 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Pago a Empleados <span>(Ejercicio 57)</span></h4>
-                <form action="">
+                <form action="" id="form-eje57">
                   <label for="Eje57_N1">Pago por hora</label>
                   <input type="number" name="Eje57_N" id="Eje57_N1" placeholder="Digite un número" />
-                  <input class="input-btn" type="button" value="Verificar" id="eje57_verify">
+                  <input class="input-btn" type="button" value="Siguiente" id="eje57_verify">
+                </form>
+                <form action="" id="bx-Hrs">
+                  <h6>Dia: <span id="n2Dia">0</span></h6>
+                  <label for="Eje57_N2">Horas Trabajadas</label>
+                  <input type="number" name="Eje57_N" id="Eje57_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje57_verify2">
                 </form>
                 <p id="res-eje57"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje57_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1540,7 +1556,15 @@
                 <form action="">
                   <input class="input-btn" type="button" value="Ejecutar" id="eje58_verify">
                 </form>
-                <p id="res-eje58"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje58"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje58"></p>
+                  </div>
+                </div>
+                <p id="res3-eje58"></p>
               </div>
             </div>
           </div>
@@ -1555,6 +1579,32 @@
                   <input class="input-btn" type="button" value="Ejecutar" id="eje59_verify">
                 </form>
                 <p id="res-eje59"></p>
+                <div class="row">
+                  <div class="col-12">
+                    <p id="res1-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res2-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res3-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res4-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res5-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res6-eje59"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res7-eje59"></p>
+                  </div>
+                  <div class="col-12">
+                    <p id="res8-eje59"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
