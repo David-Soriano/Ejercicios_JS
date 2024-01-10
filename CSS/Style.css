@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Overpass+Mono:wght@300&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: linear-gradient(rgba(17, 23, 23, 0.544), rgba(0, 0, 0, 0.999)), url(../Img/fondo-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(104, 41, 9, 0.904);
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(141, 55, 12, 0.904);
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    scrollbar-color: transparent;
+}
+
+.box-principal h6 {
+    color: #9c9494;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 10px;
+}
+
+.box-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    left: -200px;
+    top: -200px;
+
+    border: 1px solid rgba(215, 81, 14, 0.77);
+    background-color: #09080857;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 400ms;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.box-icono:hover {
+    background-color: #0908089b;
+    opacity: 0.9;
+}
+
+#icono {
+    font-size: 25px;
+    color: rgba(215, 81, 14, 0.77);
+
+}
+
+.titulo {
+    text-align: center;
+    font-family: 'Overpass Mono', monospace;
+    color: #9c9494;
+}
+
+.box-menu button,
+#box-mEjer button {
+    min-height: 50px;
+    width: 100%;
+    border: 1px solid rgba(166, 62, 10, 0.397);
+    background: rgba(13, 16, 16, 0.544);
+    color: #9c9494;
+    border-radius: 5px;
+    transition: all 400ms;
+    cursor: pointer;
+
+    font-family: 'Electrolize', sans-serif;
+    font-size: 15px;
+
+    box-shadow: 0px 2px 31px 1px rgba(0, 0, 0, 0.96);
+    -webkit-box-shadow: 0px 2px 31px 1px rgba(0, 0, 0, 0.96);
+    -moz-box-shadow: 0px 2px 31px 1px rgba(0, 0, 0, 0.96);
+}
+
+.box-menu button:hover {
+    transform: scale(1.05);
+    background-color: #09080880;
+}
+
+#box-mEjer button:hover {
+    transform: scale(1.05);
+    background-color: #09080880;
+}
+
+#btnMasEjers #MEjercicios:hover{
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+}
+.bx-btns div {
+    margin: 10px auto;
+}
+
+.info {
+    text-align: center;
+}
+
+.linea {
+    color: #9c9494;
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .box-principal {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 850px) {
+    .box-icono {
+        position: relative;
+        left: 0;
+    }
+}
+
+@media (max-height: 460px) {
+    .box-icono {
+        position: relative;
+        top: -100px;
+    }
+}
+
+/*-------------------------------------------------*/
+
+h2,h4,h5,h6 {
+    color: #9c9494;
+    margin-bottom: 20px;
+    font-family: 'Overpass Mono', monospace;
+}
+
+#box-mEjer55 h6, #box-mEjer55 .paneles{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h4 span {
+    font-size: 12px;
+}
+
+.box-ejercicio .row div {
+    margin: auto;
+}
+
+.box-ejercicio .row .col,
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-ejercicio label {
+    color: #9c9494;
+    font-size: 12px;
+    font-family: 'Electrolize', sans-serif;
+}
+
+.box-ejercicio input[type="number"],
+.box-ejercicio input[type="text"],
+.box-ejercicio input[type="password"],
+.box-ejercicio input[type="email"],
+.box-ejercicio input[type="datetime-local"] {
+    background-color: rgba(78, 81, 83, 0.133);
+    border: none;
+    border-bottom: 2px solid rgba(166, 62, 10, 0.397);
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    color: #9c9494;
+    font-size: 10px;
+
+    height: 30px;
+    margin: 10px 0;
+}
+
+.box-ejercicio input:hover {
+    background-color: rgba(78, 81, 83, 0.349);
+    border-bottom: 2px solid rgba(215, 81, 14, 0.77);
+}
+
+.box-ejercicio input:focus {
+    outline: 1px solid rgba(247, 92, 8, 0.451);
+}
+
+.box-ejercicio p {
+    color: #9c9494;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 14px;
+    text-align: center;
+}
+
+.box-ejercicio hr {
+    color: #9e9696;
+}
+
+.box-ejercicio input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.box-ejercicio input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.box-ejercicio form .input-btn,
+.box-ejercicio .input-btn {
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    color: #9c9494;
+    font-size: 12px;
+    background-color: rgba(247, 92, 8, 0.338);
+    margin: 10px auto;
+    transition: all 400ms;
+}
+
+.box-ejercicio .input-btn:hover {
+    background-color: rgba(175, 70, 14, 0.882);
+    color: #e3d8d8;
+}
+
+/*---------------------------------*/
+
+.bx-triqui .row .col {
+    color: #9c9494;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+.bx-triqui .row .col:hover {
+    background-color: #09080880;
+}
+
+.bx-triqui .fila-1 .col {
+    border-bottom: 2px solid #9c9494;
+}
+
+.bx-triqui .fila-2 .col {
+    border-bottom: 2px solid #9c9494;
+}
+
+.bx-triqui .clm {
+    border-right: 2px solid #9c9494;
+}
+
+/*----------------------------------------*/
+
+.bx-cMagico .row .col {
+    border: 2px solid #9c9494;
+    text-align: center;
+    color: #766f6f;
+}
+
+.bx-cMagico .row .col:hover {
+    background-color: #09080880;
+}
+
+.bx-cMagico .row .col_1,
+.bx-triqui .row .col_1 {
+    border-top-left-radius: 5px;
+}
+
+.bx-cMagico .row .col_2,
+.bx-triqui .row .col_2 {
+    border-bottom-left-radius: 5px;
+}
+
+.bx-cMagico .row .col_3,
+.bx-triqui .row .col_3 {
+    border-top-right-radius: 5px;
+}
+
+.bx-cMagico .row .col_4,
+.bx-triqui .row .col_4 {
+    border-bottom-right-radius: 5px;
+}
+
+#box-mEjer button {
+    margin: 10px;
+}
+
+#box-MEjers {
+    position: fixed;
+    left: 45%;
+    top: 20%;
+}
+
+.row_ejers {
+    width: 40%;
+    max-height: 60vh;
+    outline: 1px solid rgba(247, 92, 8, 0.451);
+    border-radius: 10px;
+    background-color: rgba(13, 16, 16, 0.544);
+    padding: 30px;
+    overflow: auto;
+}
+
+.row_ejers::-webkit-scrollbar {
+    width: 5px;
+}
+
+.row_ejers::-webkit-scrollbar-thumb {
+    background-color: #272727;
+    border-radius: 4px;
+}
+
+.row_ejers::-webkit-scrollbar-thumb:hover {
+    background-color: #3b3b3b;
+}
+
+.box-icono-2 svg {
+    color: rgba(175, 70, 14, 0.541);
+    cursor: pointer;
+    position: fixed;
+    top: 90%;
+    left: 65%;
+    transition: all 400ms;
+}
+
+.box-icono-2 svg:hover {
+    color: rgb(238, 91, 12);
+}
+
+.reload svg {
+    color: rgba(175, 70, 14, 0.541);
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+.reload svg:hover {
+    color: rgb(238, 91, 12);
+    transform: scale(1.2);
+}
+
+.box-ejercicio .row_ejers .operaciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.operaciones .input-operacion {
+    margin: 5%;
+    color: #ff7700b0;
+    border: 1px solid #ff7700b0;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 400ms;
+    font-size: 12px;
+}
+
+.operaciones .input-operacion:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+}
+
+.bxEj-rds input[type="radio"] {
+    outline: none;
+    margin: 0 5%;
+}
+
+.bxEj-rds input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 12px;
+    /* Ajusta el tamaño del círculo del radio */
+    height: 12px;
+    /* Ajusta el tamaño del círculo del radio */
+    border: 2px solid #ff7700b0;
+    /* Cambia el color del borde del radio */
+    border-radius: 50%;
+    /* Hace que el radio tenga forma de círculo */
+    outline: none;
+    /* Elimina el contorno predeterminado en el enfoque */
+    margin-right: 5px;
+    /* Añade un espacio entre el texto y el radio */
+}
+
+.bxEj-rds input[type="radio"]:checked {
+    background-color: #ff7700b0;
+}
+
+#box-mEjer8 .rads,
+#box-mEjer10 .rads,
+#box-mEjer37 .rads,
+#box-mEjer39 .rads,
+#box-mEjer40 .rads,
+#box-mEjer42 .rads,
+#box-mEjer43 .rads,
+#box-mEjer44 .rads {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2%;
+}
+
+#box-mEjer8 .radios,
+#box-mEjer10 .radios,
+#box-mEjer37 .radios,
+#box-mEjer39 .radios,
+#box-mEjer40 .radios,
+#box-mEjer42 .radios,
+#box-mEjer43 .radios,
+#box-mEjer44 .radios {
+    margin: 0;
+}
+
+.operaciones .input-calculadora{
+    min-width: 30%;
+    margin: 10% 10%;
+    color: #ff7700b0;
+    border: 1px solid #ff7700b0;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 400ms;
+}
+
+.operaciones .input-calculadora:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+    box-shadow: 0px 0px 12px 0px rgba(255, 119, 0, 0.66);
+}
+
+.operaciones .inpBancos input{
+    margin: 5% auto;
+}
+@media (max-width: 980px) {
+    #box-mEjer1 .operaciones, #box-mEjer55 .operaciones {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    #box-mEjer46 .operaciones {
+        display: flex;
+        flex-direction: column;
+    }
+}

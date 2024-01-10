@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="../CSS/Style.css" />
+  <script src="../JS/bootstrap.min.js"></script>
+  <script src="../JS/Script.js"></script>
+  <script src="https://kit.fontawesome.com/d267781e5c.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="../Img/icono-js.jpg">
+  <title>Ejercicios JS</title>
+</head>
+
+<bod>
+  <div class="col-1 box-icono" id="box-volver">
+    <i class="fa-solid fa-angles-left" id="icono"></i>
+  </div>
+  <div class="container box-principal" id="box-principal">
+    <div class="row box-menu" id="bx-menu">
+      <div class="col">
+        <div class="row titulo">
+          <h1>Ejercicios JavaScript</h1>
+        </div>
+
+        <div class="row bx-btns">
+          <div class="col-lg col-sm-3 col-7">
+            <button id="valContrasena">Ver Contraseñas</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="nPrimos">Números Primo</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="cPrimos">Cantidad No.Primos</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="srFibonacci">Serie Fibonacci</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="Triqui">Triqui</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="cMagico">Cuadro Mágico</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="Formulario">Formulario</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7">
+            <button id="aJSON">Archivo JSON</button>
+          </div>
+          <div class="col-lg col-sm-3 col-7" id="btnMasEjers">
+            <button id="MEjercicios">Más Ejercicios...</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col info">
+          <div class="row">
+            <div class="col-4 linea">
+              <hr />
+            </div>
+          </div>
+          <h6>By David Soriano &copy</h6>
+          <h6>ADSO</h6>
+          <h6>______</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col box-ejercicio" id="box-contrasena">
+      <div class="row">
+        <div class="col">
+          <h2>Validar Contraseña</h2>
+          <form>
+            <label for="password-1">Ingresa la contraseña</label>
+            <input type="password" name="password-1" id="password-1" placeholder="Digite la contraseña" required />
+            <label for="password-2">Confirma la contraseña</label>
+            <input type="password" name="password-2" id="password-2" placeholder="Digite la contraseña" required />
+            <input type="button" value="Validar" class="input-btn" id="btn-val-con" />
+          </form>
+          <hr />
+          <p id="resPassword">Llene los campos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col box-ejercicio" id="box-numPrimos">
+      <div class="row">
+        <div class="col">
+          <h2>Verificar Número Primo</h2>
+          <label for="numeroP1">Ingresa el número a verificar.</label>
+          <input type="number" name="numeroP1" id="numeroP1" placeholder="Digite un número entero"
+            onkeyup="validarNPrimo(this.value)" />
+
+          <p id="p-linea">______</p>
+          <p id="resNPrimo">Llene los campos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-ejercicio" id="box-cntPrimos">
+      <div class="row">
+        <div class="col">
+          <h2>Números Primos</h2>
+          <label for="numeroP2">Ingresa el número limite</label>
+          <input type="number" name="numeroP2" id="numeroP2" placeholder="Digite un número entero" required />
+          <input type="button" value="Generar" class="input-btn" id="gen-nL" />
+          <p id="p-linea">______</p>
+          <p id="resCantNP"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-ejercicio" id="box-fnc">
+      <div class="row">
+        <div class="col">
+          <h2>Serie De Fibonacci</h2>
+          <form action="">
+            <label for="lmtFibonacci">Ingresa el número limite</label>
+            <input type="number" name="lmtFibonacci" id="lmtFibonacci" placeholder="Digite un número entero" required />
+            <input type="submit" value="Generar" class="input-btn" />
+          </form>
+          <p id="p-linea">______</p>
+          <p><span></span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-triqui" id="box-trq">
+      <div class="row">
+        <div class="col bx-triqui">
+          <h2>Triqui</h2>
+          <div class="row fila-1">
+            <div class="col clm col_1">
+              <p><span></span></p>
+            </div>
+            <div class="col clm">
+              <p><span></span></p>
+            </div>
+            <div class="col col_3">
+              <p><span></span></p>
+            </div>
+          </div>
+          <div class="row fila-2">
+            <div class="col clm">
+              <p><span></span></p>
+            </div>
+            <div class="col clm">
+              <p><span></span></p>
+            </div>
+            <div class="col col_4">
+              <p><span></span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col clm col_2">
+              <p><span></span></p>
+            </div>
+            <div class="col clm">
+              <p><span></span></p>
+            </div>
+            <div class="col">
+              <p><span></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-cMagico" id="box-cMgc">
+      <div class="row">
+        <div class="col bx-cMagico">
+          <h2>Cubo Mágico</h2>
+          <div class="row">
+            <div class="col col_1">
+              <p><span>1</span></p>
+            </div>
+            <div class="col">
+              <p><span>2</span></p>
+            </div>
+            <div class="col col_3">
+              <p><span>3</span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><span>4</span></p>
+            </div>
+            <div class="col">
+              <p><span>5</span></p>
+            </div>
+            <div class="col">
+              <p><span>6</span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col_2">
+              <p><span>7</span></p>
+            </div>
+            <div class="col">
+              <p><span>8</span></p>
+            </div>
+            <div class="col col_4">
+              <p><span>9</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row box-ejercicio" id="box-frm">
+      <div class="col">
+        <h2>Formulario</h2>
+        <form action="">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Ej: coreo@dominio.com" required />
+
+          <label for="telefono">Teléfono</label>
+          <input type="text" name="telefono" id="telefono" placeholder="Ej: 322 333 4444" required />
+
+          <label for="placaV">Placa Vehiculo</label>
+          <input type="text" name="placaV" id="placaV" placeholder="Ej: ATS-04C" required />
+
+          <label for="placaM">Placa Moto</label>
+          <input type="text" name="placaM" id="placaM" placeholder="Ej: ATS-04C" required />
+
+          <label for="fechah">Fecha</label>
+          <input type="datetime-local" name="fechah" id="fechah" required />
+
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" placeholder="Digite su contraseña" required />
+
+          <input type="submit" value="Envíar" class="input-btn" />
+        </form>
+      </div>
+    </div>
+
+    <div class="box-aJSON" id="box-aJson">
+      <h2>Archivo JSON</h2>
+    </div>
+
+    <div class="box-MEjercicios" id="box-mEjer">
+      <div class="row">
+        <div class="col-3">
+          <div class="row" id="caja-ejs"></div>
+        </div>
+        <div class="col" id="box-MEjers">
+          <div class="box-ejercicio" id="box-mEjer1">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Calculadora básica <span>(Ejercicio 1)</span></h4>
+                <form action="">
+                  <label for="Eje1_N1">Primer Número</label>
+                  <input type="number" name="Eje1_N1" id="Eje1_N1" placeholder="Digite un número" />
+                  <label for="Eje1_N2">Segundo Número</label>
+                  <input type="number" name="Eje1_N2" id="Eje1_N2" placeholder="Digite un número" />
+
+                  <div class="col operaciones">
+                    <input class="input-operacion" type="button" value="SUMA" id="opSuma">
+                    <input class="input-operacion" type="button" value="RESTA" id="opResta">
+                    <input class="input-operacion" type="button" value="MULTIPLICACIÓN" id="opMultiplicacion">
+                    <input class="input-operacion" type="button" value="DIVISIÓN" id="opDivision">
+                  </div>
+                </form>
+                <p id="res-eje1"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer2">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Mayor o Menor <span>(Ejercicio 2)</span></h4>
+                <form action="">
+                  <label for="Eje2_N1">Primer Número</label>
+                  <input type="number" name="Eje2_N1" id="Eje2_N1" placeholder="Digite un número" autofocus />
+                  <label for="Eje2_N2">Segundo Número</label>
+                  <input type="number" name="Eje2_N2" id="Eje2_N2" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje2_verify">
+                </form>
+                <p id="res-eje2"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer3">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Comparar con 100 <span>(Ejercicio 3)</span></h4>
+                <form action="">
+                  <label for="Eje3_N1">Número a comparar</label>
+                  <input type="number" name="Eje3_N1" id="Eje3_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio3(this.value)" />
+                </form>
+                <p id="res-eje3"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer4">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números Ascendentes <span>(Ejercicio 4)</span></h4>
+                <form action="">
+                  <label for="Eje4_N1">Primer Número</label>
+                  <input type="number" name="Eje4_N1" id="Eje4_N1" placeholder="Digite un número" />
+                  <label for="Eje4_N2">Segundo Número</label>
+                  <input type="number" name="Eje4_N2" id="Eje4_N2" placeholder="Digite un número" />
+                  <label for="Eje4_N3">Tercer Número</label>
+                  <input type="number" name="Eje4_N3" id="Eje4_N3" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Ordenar" id="eje4_verify">
+                </form>
+                <p id="res-eje4"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer5">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Promedio Notas <span>(Ejercicio 5)</span></h4>
+                <form action="">
+                  <label for="Eje5_N1">Primera Nota</label>
+                  <input type="number" name="Eje5_N1" id="Eje5_N1" placeholder="Digite un número menor a 5" />
+                  <label for="Eje5_N2">Segunda Nota</label>
+                  <input type="number" name="Eje5_N2" id="Eje5_N2" placeholder="Digite un número menor a 5" />
+                  <label for="Eje5_N3">Tercera Nota</label>
+                  <input type="number" name="Eje5_N3" id="Eje5_N3" placeholder="Digite un número menor a 5" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje5_verify">
+                </form>
+                <p id="res-eje5"></p>
+                <p id="res-eje5-2"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer6">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Area Triángulo <span>(Ejercicio 6)</span></h4>
+                <form action="">
+                  <label for="Eje6_N1">Base</label>
+                  <input type="number" name="Eje6_N1" id="Eje6_N1" placeholder="Digite un número" />
+                  <label for="Eje6_N2">Altura</label>
+                  <input type="number" name="Eje6_N2" id="Eje6_N2" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje6_verify">
+                </form>
+                <p id="res-eje6"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer7">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Par o Impar <span>(Ejercicio 7)</span></h4>
+                <form action="">
+                  <label for="Eje7_N1">Número a verificar</label>
+                  <input type="number" name="Eje7_N1" id="Eje7_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio7()" />
+                </form>
+                <p id="res-eje7"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer8">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Venta Rosas <span>(Ejercicio 8)</span></h4>
+                <div class="radios" id="form_venta-rosas">
+                  <label for="">Color de Rosa</label>
+                  <section class="col rads">
+                    <input type="radio" name="colorR" id="Eje8_Op1" value="Rojo" />
+                    <label for="Eje8_Op1">Rojo</label>
+                  </section>
+                  <section class="col rads">
+                    <input type="radio" name="colorR" id="Eje8_Op2" value="Blanco" />
+                    <label for="Eje8_Op2">Blanco</label>
+                  </section>
+                  <section class="col rads">
+                    <input type="radio" name="colorR" id="Eje8_Op3" value="Negro" />
+                    <label for="Eje8_Op3">Negro</label>
+                  </section>
+                  <section class="col rads">
+                    <input type="radio" name="colorR" id="Eje8_Op4" value="Otro" />
+                    <label for="Eje8_Op4">Otro</label>
+                  </section>
+                </div>
+                <div class="row" id="bxCantidadRosas">
+                  <label for="cantidadRosas">Cantidad de Rosas (Color:<span id="colRosa"></span>)</label>
+                  <input type="number" name="cantidad" id="cantidadRosas" placeholder="Digite un número">
+                </div>
+                <input class="input-btn" type="button" value="Siguiente" id="eje8_verify">
+                <input class="input-btn" type="button" value="Verificar" id="eje8_verify2">
+                <input class="input-btn" type="button" value="Cambiar" id="eje8_verify3">
+                <div class="row" id="respuestas">
+                  <p id="res-eje8"></p>
+                  <p id="res2-eje8"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer9">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Porcentaje Ganado <span>(Ejercicio 9)</span></h4>
+                <form action="">
+                  <label for="Eje9_N1">Producto vendido por el empleado</label>
+                  <input type="number" name="Eje9_N1" id="Eje9_N1" placeholder="Digite un número de producto vendido" />
+                  <label for="Eje9_N2">Valor total de la venta</label>
+                  <input type="number" name="Eje9_N2" id="Eje9_N2" placeholder="Digite un número valor" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje9_verify">
+                </form>
+                <p id="res-eje9"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer10">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Modelo Auto <span>(Ejercicio 10)</span></h4>
+                <form action="">
+                  <label>Color del auto</label>
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="colorAuto" id="Eje10_Op1" value="Rojo" />
+                      <label for="Eje10_Op1">Rojo</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="colorAuto" id="Eje10_Op2" value="Verde" />
+                      <label for="Eje10_Op2">Verde</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="colorAuto" id="Eje10_Op3" value="Otro" />
+                      <label for="Eje10_Op3">Otro</label>
+                    </section>
+                  </div>
+                  <label for="modelo">Modelo del auto</label>
+                  <input type="number" 8 name="modelo" id="Eje10_N2" placeholder="Digite un modelo del auto" />
+                  <label for="marca">Marca del auto</label>
+                  <input type="text" name="marca" id="Eje10_N3" placeholder="Digite un marca del auto" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje10_verify">
+                </form>
+                <div class="row">
+                  <div class="row">
+                    <div class="col">
+                      <p id="res1-eje10"></p>
+                    </div>
+                    <div class="col">
+                      <p id="res2-eje10"></p>
+                    </div>
+                    <div class="col">
+                      <p id="res3-eje10"></p>
+                    </div>
+                    <div class="col">
+                      <p id="res4-eje10"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p id="res5-eje10"></p>
+                    </div>
+                    <div class="col">
+                      <p id="res6-eje10"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer11">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Decremento en 3 <span>(Ejercicio 11)</span></h4>
+                <form action="" class="operaciones">
+                  <input class="input-operacion" type="button" value="Verificar" id="eje11_verify">
+                </form>
+                <div id="rta11"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer12">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Serie Fibonacci <span>(Ejercicio 12)</span></h4>
+                <form action="">
+                  <label for="Eje11_N1">Limite de números a mostrar (Min 10 - Max 30)</label>
+                  <input type="number" name="Eje12_N" id="Eje12_N1" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje12_verify">
+                </form>
+                <p id="res1-eje12"></p>
+                <p id="res2-eje12"></p>
+                <p id="res3-eje12"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer13">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números Primos <span>(Ejercicio 13)</span></h4>
+                <form action="">
+                  <label for="Eje13_N1">Números primos a mostrar</label>
+                  <input type="number" name="Eje13_N1" id="Eje13_N1" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje13_verify">
+                </form>
+                <p id="res-eje13"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer14">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números Pares-Impares <span>(Ejercicio 14)</span></h4>
+                <form action="">
+                  <label for="Eje14_N1">Ingrese un número mayor a 10</label>
+                  <input type="number" name="Eje14_N1" id="Eje14_N1" placeholder="Digite un número" />
+
+                  <input class="input-btn" type="button" value="Verificar" id="eje14_verify">
+                </form>
+                <div class="row">
+                  <div class="col-12">
+                    <p id="res1-eje14"></p>
+                  </div>
+                  <div class="col-12">
+                    <p id="res2-eje14"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res3-eje14"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res4-eje14"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res5-eje14"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res6-eje14"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res7-eje14"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer15">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números J y K <span>(Ejercicio 15)</span></h4>
+                <form action="">
+                  <label for="Eje15_N1">Ingrese el número J</label>
+                  <input type="number" name="Eje15_N1" id="Eje15_N1" placeholder="Digite un número" />
+
+                  <label for="Eje15_N1">Ingrese el número K</label>
+                  <input type="number" name="Eje15_N1" id="Eje15_N2" placeholder="Digite un número" />
+                  <label for="Eje15_N1">Operación a realizar<br>1. Suma<br>2. Modulo<br>3. División<br>4. Suma + 1<br>5.
+                    Multiplicación + 1</label>
+                  <input type="number" name="Eje15_N1" id="Eje15_N3" placeholder="Digite la opción" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje15_verify">
+                </form>
+                <p id="res-eje15"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer16">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Divisible entre 2 y 3 <span>(Ejercicio 16)</span></h4>
+                <form action="">
+                  <label for="Eje15_N1">Número a verificar</label>
+                  <input type="number" name="Eje16_N" id="Eje16_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio16()" />
+                </form>
+                <p id="res-eje16"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer17">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Primos en rango <span>(Ejercicio 17)</span></h4>
+                <form action="">
+                  <label for="Eje15_N1">Primer número</label>
+                  <input type="number" name="Eje17_N" id="Eje17_N1" placeholder="Digite un número" />
+                  <label for="Eje15_N1">Número mayor al primero</label>
+                  <input type="number" name="Eje17_N" id="Eje17_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje17_verify">
+                </form>
+                <p id="res-eje17"></p>
+                <p id="res2-eje17"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer18">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Hrs:Min:Seg <span>(Ejercicio 18)</span></h4>
+                <form action="" class="operaciones">
+                  <input class="input-operacion" type="button" value="Resultado" id="eje18_verify">
+                </form>
+                <p id="res-eje18"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer19">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Tabla de multiplicar <span>(Ejercicio 19)</span></h4>
+                <form action="">
+                  <label for="Eje19_N">Número a multiplicar</label>
+                  <input type="number" name="Eje19_N" id="Eje19_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje19_verify">
+                </form>
+                <p id="res-eje19"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer20">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Verificar Números <span>(Ejercicio 20)</span></h4>
+                <form action="">
+                  <label for="Eje20_N">Números a generar</label>
+                  <input type="number" name="Eje20_N" id="Eje20_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje20_verify">
+                </form>
+                <div class="row">
+                  <div class="col-12">
+                    <p id="res1-eje20"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje20"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res3-eje20"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res4-eje20"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res5-eje20"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer21">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Sumar numeros <span>(Ejercicio 21)</span></h4>
+                <form action="">
+                  <label for="Eje21_N">Primer Número</label>
+                  <input type="number" name="Eje21_N" id="Eje21_N1" placeholder="Digite un número" />
+                  <label for="Eje21_N">Segundo Número</label>
+                  <input type="number" name="Eje21_N" id="Eje21_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Sumar" id="eje21_verify">
+                </form>
+                <p id="res-eje21"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer22">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Nota Examenes <span>(Ejercicio 22)</span></h4>
+                <form action="">
+                  <label for="Eje22_N">Nota Primer Examen</label>
+                  <input type="number" name="Eje22_N" id="Eje22_N1" placeholder="Digite un número" />
+                  <label for="Eje22_N">Nota Segundo Examen</label>
+                  <input type="number" name="Eje22_N" id="Eje22_N2" placeholder="Digite un número" />
+                  <label for="Eje22_N">Nota Tercer Examen</label>
+                  <input type="number" name="Eje22_N" id="Eje22_N3" placeholder="Digite un número" />
+                  <label for="Eje22_N">Nota Cuarto Examen</label>
+                  <input type="number" name="Eje22_N" id="Eje22_N4" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje22_verify">
+                </form>
+                <p id="res-eje22"></p>
+                <p id="res2-eje22"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer23">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Área Rectangulo <span>(Ejercicio 23)</span></h4>
+                <form action="">
+                  <label for="Eje23_N">Base</label>
+                  <input type="number" name="Eje23_N" id="Eje23_N1" placeholder="Digite un número" />
+                  <label for="Eje23_N">Altura</label>
+                  <input type="number" name="Eje23_N" id="Eje23_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje23_verify">
+                </form>
+                <p id="res-eje23"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer24">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Área Circunferencia <span>(Ejercicio 24)</span></h4>
+                <form action="">
+                  <label for="Eje24_N">Radio Circunferencia</label>
+                  <input type="number" name="Eje24_N" id="Eje24_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje24_verify">
+                </form>
+                <p id="res-eje24"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer25">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Área Terreno <span>(Ejercicio 25)</span></h4>
+                <form action="">
+                  <label for="Eje25_N">Base del triángulo y rectangulo (En mts)</label>
+                  <input type="number" name="Eje25_N" id="Eje25_N1" placeholder="Digite un número" />
+                  <label for="Eje25_N">Altura del triángulo y rectangulo unidos (En mts)</label>
+                  <input type="number" name="Eje25_N" id="Eje25_N2" placeholder="Digite un número" />
+                  <label for="Eje25_N">Altura del rectangulo (En mts)</label>
+                  <input type="number" name="Eje25_N" id="Eje25_N3" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje25_verify">
+                </form>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje25"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje25"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res3-eje25"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-ejercicio" id="box-mEjer26">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Área Cono <span>(Ejercicio 26)</span></h4>
+                <form action="">
+                  <label for="Eje26_N">Hipotenusa del triángulo (En mts)</label>
+                  <input type="number" name="Eje26_N" id="Eje26_N1" placeholder="Digite un número" />
+                  <label for="Eje26_N">Radio del circulo (En mts)</label>
+                  <input type="number" name="Eje26_N" id="Eje26_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje26_verify">
+                </form>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje26"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje26"></p>
+                  </div>
+                  <div class="col">
+                    <p id="res3-eje26"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer27">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Precio Leche <span>(Ejercicio 27)</span></h4>
+                <form action="">
+                  <label for="Eje27_N">Litros de leche producidos</label>
+                  <input type="number" name="Eje27_N" id="Eje27_N1" placeholder="Digite un número" />
+                  <label for="Eje27_N">Precio del galón</label>
+                  <input type="number" name="Eje27_N" id="Eje27_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje27_verify">
+                </form>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje27"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje27"></p>
+                  </div>
+                  <div class="col-12">
+                    <p id="res3-eje27"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer28">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Coordenada Plano Carteciano <span>(Ejercicio 28)</span></h4>
+                <form action="">
+                  <label for="Eje28_N">Coordenada X1</label>
+                  <input type="number" name="Eje28_N" id="Eje28_N1" placeholder="Digite un número" />
+                  <label for="Eje28_N">Coordenada X2</label>
+                  <input type="number" name="Eje28_N" id="Eje28_N2" placeholder="Digite un número" />
+                  <label for="Eje28_N">Coordenada Y1</label>
+                  <input type="number" name="Eje28_N" id="Eje28_N3" placeholder="Digite un número" />
+                  <label for="Eje28_N">Coordenada Y2</label>
+                  <input type="number" name="Eje28_N" id="Eje28_N4" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje28_verify">
+                </form>
+                <p id="res-eje28"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer29">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Calcular Tela <span>(Ejercicio 29)</span></h4>
+                <form action="">
+                  <label for="Eje29_N">Cantidad de tela (En metros)</label>
+                  <input type="number" name="Eje29_N" id="Eje29_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje29_verify">
+                </form>
+                <p id="res-eje29"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer30">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Costo del Agua <span>(Ejercicio 30)</span></h4>
+                <form action="">
+                  <label for="Eje30_N">Altura de la alberca (En metros)</label>
+                  <input type="number" name="Eje30_N" id="Eje30_N1" placeholder="Digite un número" />
+                  <label for="Eje30_N">Largo de la alberca (En metros)</label>
+                  <input type="number" name="Eje30_N" id="Eje30_N2" placeholder="Digite un número" />
+                  <label for="Eje30_N">Ancho de la alberca (En metros)</label>
+                  <input type="number" name="Eje30_N" id="Eje30_N3" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje30_verify">
+                </form>
+                <div class="row">
+                  <div class="col-12">
+                    <p id="res-eje30"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje30"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res3-eje30"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer31">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Comparar Números <span>(Ejercicio 31)</span></h4>
+                <form action="">
+                  <label for="Eje31_N">Primer Número</label>
+                  <input type="number" name="Eje31_N" id="Eje31_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio31()" />
+                  <label for="Eje31_N">Segundo Número</label>
+                  <input type="number" name="Eje31_N" id="Eje31_N2" placeholder="Digite un número"
+                    onkeyup="ejercicio31()" />
+                </form>
+                <p id="res-eje31"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer32">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Positivo o Negativo <span>(Ejercicio 32)</span></h4>
+                <form action="">
+                  <label for="Eje32_N">Primer Número</label>
+                  <input type="number" name="Eje32_N" id="Eje32_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio32()" />
+                </form>
+                <p id="res-eje32"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer33">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Valor Lápices <span>(Ejercicio 33)</span></h4>
+                <form action="">
+                  <label for="Eje33_N">Cantidad de lápices</label>
+                  <input type="number" name="Eje33_N" id="Eje33_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje33_verify">
+                </form>
+                <p id="res-eje33"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer34">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>El Harapiento Distinguido <span>(Ejercicio 34)</span></h4>
+                <form action="">
+                  <label for="Eje34_N">Valor del vestido</label>
+                  <input type="number" name="Eje34_N" id="Eje34_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje34_verify">
+                </form>
+                <p id="res-eje34"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer35">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>El Número Mayor <span>(Ejercicio 35)</span></h4>
+                <form action="">
+                  <label for="Eje35_N">Primer valor</label>
+                  <input type="number" name="Eje35_N" id="Eje35_N1" placeholder="Digite un número"
+                    onkeyup="ejercicio35()" />
+                  <label for="Eje35_N">Segundo valor</label>
+                  <input type="number" name="Eje35_N" id="Eje35_N2" placeholder="Digite un número"
+                    onkeyup="ejercicio35()" />
+                  <label for="Eje35_N">Tercer valor</label>
+                  <input type="number" name="Eje35_N" id="Eje35_N3" placeholder="Digite un número"
+                    onkeyup="ejercicio35()" />
+                </form>
+                <p id="res-eje35"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer36">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>La Langosta Ahumada <span>(Ejercicio 36)</span></h4>
+                <form action="">
+                  <label for="Eje36_N1">Número de personas</label>
+                  <input type="number" name="Eje36_N" id="Eje36_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje36_verify">
+                </form>
+                <p id="res-eje36"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer37">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Asociación Vinicultores <span>(Ejercicio 37)</span></h4>
+                <form action="">
+                  <label for="Eje37_N">Kilos de uvas</label>
+                  <input type="number" name="kilos" id="Eje37_N1" placeholder="Digite un número" />
+                  <label for="Eje37_N">Tipo de Uva</label>
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="tipo" id="Eje37_Op1" value="A" />
+                      <label for="Eje37_Op1">A</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="tipo" id="Eje37_Op2" value="B" />
+                      <label for="Eje37_Op2">B</label>
+                    </section>
+                    <label for="Eje37_N">Tamaño de Uva</label>
+                    <section class="col rads">
+                      <input type="radio" name="tamaño" id="Eje37-2_Op1" value="1" />
+                      <label for="Eje37-2_Op1">1</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="tamaño" id="Eje37-2_Op2" value="2" />
+                      <label for="Eje37-2_Op2">2</label>
+                    </section>
+                  </div>
+                  <input class="input-btn" type="button" value="Verificar" id="eje37_verify">
+                </form>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje37"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje37"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res3-eje37"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res4-eje37"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer38">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Viaje Escolar <span>(Ejercicio 38)</span></h4>
+                <form action="">
+                  <label for="Eje38_N">Cantidad de estudiantes</label>
+                  <input type="number" name="Eje38_N" id="Eje38_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje38_verify">
+                </form>
+                <p id="res1-eje38"></p>
+                <p id="res2-eje38"></p>
+                <p id="res3-eje38"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer39">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Chimefón <span>(Ejercicio 39)</span></h4>
+                <form action="">
+                  <label for="Eje39_N">Tiempo de duración</label>
+                  <input type="number" name="Eje39_N" id="Eje39_N1" placeholder="Digite un número" />
+                  <label for="Eje39_N">Día: (l, m, mi, j, v, s, d)</label>
+                  <input type="text" name="Eje39_N" id="Eje39_N2" placeholder="Digite una letra" />
+                  <label for="">Turno</label>
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="turno" id="Eje39_Op1" value="matutino" />
+                      <label for="Eje39_Op1">Matutino</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="turno" id="Eje39_Op2" value="vespertino" />
+                      <label for="Eje39_Op2">Vespertino</label>
+                    </section>
+                  </div>
+                  <input class="input-btn" type="button" value="Verificar" id="eje39_verify">
+                </form>
+                <div class="row">
+                  <div class="col-4">
+                    <p id="res1-eje39"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res2-eje39"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res3-eje39"></p>
+                  </div>
+                  <div class="col-12">
+                    <p id="res4-eje39"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer40">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4> Costo Viaje <span>(Ejercicio 40)</span></h4>
+                <form action="">
+                  <label for="">Tipo de autobús</label>
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="tipoBus" id="Eje40_Op1" value="A" />
+                      <label for="Eje40_Op1">A</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="tipoBus" id="Eje40_Op2" value="B" />
+                      <label for="Eje40_Op2">B</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="tipoBus" id="Eje40_Op3" value="C" />
+                      <label for="Eje40_Op3">C</label>
+                    </section>
+                  </div>
+                  <label for="Eje38_N">Cantidad de personas</label>
+                  <input type="number" name="Eje40_N" id="Eje40_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje40_verify">
+                </form>
+                <p id="res-eje40"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer41">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>El consultorio del Dr. Lorenzo T. <span>(Ejercicio 41)</span></h4>
+                <form action="">
+                  <label for="Eje41_N">Cantidad Total Citas Tratamiento</label>
+                  <input type="number" name="Eje41_N" id="Eje41_N1" placeholder="Digite un número" />
+                  <label for="Eje41_N">Número de cita</label>
+                  <input type="number" name="Eje41_N" id="Eje41_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje41_verify">
+                </form>
+                <p id="res-eje41"></p>
+                <p id="resFn-eje41"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje41"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje41"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res3-eje41"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res4-eje41"></p>
+                  </div>
+                </div>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje41_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer42">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Envío de Paquetes <span>(Ejercicio 42)</span></h4>
+                <form action="">
+                  <label for="Eje42_N">Peso del paquete (En Kg - Max 5 Kg)</label>
+                  <input type="number" name="Eje42_N" id="Eje42_N1" placeholder="Digite un número" />
+                  <label for="">Zona de Destino</label>
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="zona" id="Eje42_Op1" value="A-norte" />
+                      <label for="Eje42_Op1">América del Norte</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="zona" id="Eje42_Op2" value="A-central" />
+                      <label for="Eje42_Op2">América Central</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="zona" id="Eje42_Op3" value="A-sur" />
+                      <label for="Eje42_Op3">América del Sur</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="zona" id="Eje42_Op4" value="Europa" />
+                      <label for="Eje42_Op4">Europa</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="zona" id="Eje42_Op5" value="Asia" />
+                      <label for="Eje42_Op5">Asia</label>
+                    </section>
+                  </div>
+                  <input class="input-btn" type="button" value="Verificar" id="eje42_verify">
+                </form>
+                <p id="res-eje42"></p>
+                <div class="row">
+                  <div class="col-4">
+                    <p id="res1-eje42"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res2-eje42"></p>
+                  </div>
+                  <div class="col-4">
+                    <p id="res3-eje42"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer43">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Banco “Pueblo desconocido” <span>(Ejercicio 43)</span></h4>
+                <form action="">
+                  <label for="Eje43_N">Tarjetas que posee</label>
+                  <input type="number" name="Eje43_N" id="Eje43_N1" placeholder="Digite un número" />
+                  <span id="bx-tpTarjetas">
+                    <div class="radios" id="eje43-radios">
+                      <label for="tipoTarjeta">Tipo de tarjeta</label>
+                      <section class="col rads">
+                        <input type="radio" name="tipoTarjeta" id="Eje43_Op1" value="1" />
+                        <label for="Eje43_Op1">1</label>
+                      </section>
+                      <section class="col rads">
+                        <input type="radio" name="tipoTarjeta" id="Eje43_Op2" value="2" />
+                        <label for="Eje43_Op2">2</label>
+                      </section>
+                      <section class="col rads">
+                        <input type="radio" name="tipoTarjeta" id="Eje43_Op3" value="3" />
+                        <label for="Eje43_Op3">3</label>
+                      </section>
+                    </div>
+                  </span>
+
+                  <div class="radios" id="eje43-radios-apl">
+                    <label for="tipoTarjeta">Tarjeta a aumentar el limite</label>
+                    <span id="bx-aplTarjetas">
+                      <section class="col rads">
+                        <input type="radio" name="aplTarjeta" id="Eje43-2_Op1" value="1" />
+                        <label for="Eje43_Op1">Tarjeta</label>
+                      </section>
+                    </span>
+                    </section>
+                  </div>
+
+                  <input class="input-btn" type="button" value="Siguiente" id="eje43_verify">
+                  <input class="input-btn" type="button" value="Siguiente" id="eje43_verify2">
+                  <input class="input-btn" type="button" value="Aplicar" id="eje43_verify3">
+                </form>
+                <p id="res-eje43"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje43"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje43"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio bxEj-rds" id="box-mEjer44">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Supermercado SM <span>(Ejercicio 44)</span></h4>
+                <form action="" id="form-eje44">
+                  <label for="Eje44_N">Valor de la compra</label>
+                  <input type="number" name="Eje44_N" id="Eje44_N1" placeholder="Digite un número" />
+                  <div class="radios">
+                    <section class="col rads">
+                      <input type="radio" name="genero" id="Eje44_Op1" value="maculino" />
+                      <label for="Eje44_Op1">Masculino</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="genero" id="Eje44_Op2" value="femennino" />
+                      <label for="Eje44_Op2">Femenino</label>
+                    </section>
+                    <section class="col rads">
+                      <input type="radio" name="genero" id="Eje44_Op3" value="otro" />
+                      <label for="Eje44_Op3">Otro</label>
+                    </section>
+                  </div>
+                  <input class="input-btn" type="button" value="Verificar" id="eje44_verify">
+                </form>
+                <p id="res-eje44"></p>
+                <p id="res2-eje44"></p>
+                <input class="input-btn" type="button" value="Girar" id="eje44_verify2">
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje44_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer45">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Segunda Calculadora <span>(Ejercicio 45)</span></h4>
+                <form action="">
+                  <label for="Eje45_N1">Primer Número</label>
+                  <input type="number" name="Eje45_N" id="Eje45_N1" placeholder="Digite un número" />
+                  <label for="Eje45_N2">Segundo Número</label>
+                  <input type="number" name="Eje45_N" id="Eje45_N2" placeholder="Digite un número" />
+                  <div class="col operaciones">
+                    <input type="button" class="input-calculadora" id="opSuma-2" value="+">
+                    <input type="button" class="input-calculadora" id="opResta-2" value="-">
+                    <input type="button" class="input-calculadora" id="opMultiplicacion-2" value="x">
+                    <input type="button" class="input-calculadora" id="opDivision-2" value="÷">
+                  </div>
+                </form>
+                <p id="res-eje45"></p>
+                <p id="res2-eje45"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer46">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Todo en Uno <span>(Ejercicio 46)</span></h4>
+                <form action="">
+                  <label for="Eje46_N1">Ingrese un número</label>
+                  <input type="number" name="Eje46_N" id="Eje46_N1" placeholder="Digite un número" />
+
+                  <div class="col operaciones">
+                    <input class="input-operacion" type="button" value="Primo" id="opEsPrimo-2">
+                    <input class="input-operacion" type="button" value="Factorial" id="opFacto-2">
+                    <input class="input-operacion" type="button" value="Multiplicar" id="opTabla_Multi-2">
+                  </div>
+                </form>
+                <p id="res-eje46"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer47">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números Primos <span>(Ejercicio 47)</span></h4>
+                <form action="">
+                  <label for="Eje47_N1">Limite de número a mostrar</label>
+                  <input type="number" name="Eje47_N" id="Eje47_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje47_verify">
+                </form>
+                <p id="res-eje47"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer48">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Porcentaje Hombres-Mujeres <span>(Ejercicio 48)</span></h4>
+                <form action="">
+                  <label for="Eje48_N1">Número de personas</label>
+                  <input type="number" name="Eje48_N" id="Eje48_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje48_verify">
+                </form>
+                <p id="res-eje48"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer49">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Suma Números <span>(Ejercicio 49)</span></h4>
+                <form action="" id="form-eje49">
+                  <label for="Eje49_N1">Número <span>1</span></label>
+                  <input type="number" name="Eje49_N" id="Eje49_N1" placeholder="Digite un número" />
+                </form>
+                <input class="input-btn" type="button" value="Verificar" id="eje49_verify">
+                <p id="res-eje49"></p>
+                <p id="res1-eje49"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer50">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Números Pares <span>(Ejercicio 50)</span></h4>
+                <form action="">
+                  <label for="Eje50_N1">Número Limite</label>
+                  <input type="number" name="Eje50_N" id="Eje50_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje50_verify">
+                </form>
+                <p id="res-eje50"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer51">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Ventas Supermercado <span>(Ejercicio 51)</span></h4>
+                <form action="" class="operaciones">
+                  <input class="input-operacion" type="button" value="Verificar" id="eje51_verify">
+                </form>
+                <p id="res-eje51"></p>
+                <div class="row">
+                  <div class="col-12">
+                    <p id="res1-eje51"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje51"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res3-eje51"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer52">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Suma de 10 Valores <span>(Ejercicio 52)</span></h4>
+                <form action="" class="operaciones">
+                  <input class="input-operacion" type="button" value="Resultado" id="eje52_verify">
+                </form>
+                <p id="res1-eje52"></p>
+                <p id="res2-eje52"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer53">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Edades de Alumnos <span>(Ejercicio 53)</span></h4>
+                <form action="">
+                  <label for="Eje53_N1">Alumnos a registrar</label>
+                  <input type="number" name="Eje53_N" id="Eje53_N1" placeholder="Digite un número" />
+                  <div class="col" id="Eje53_span"></div>
+                  <input class="input-btn" type="button" value="Siguiente" id="eje53_verify">
+                  <input class="input-btn" type="button" value="Verificar" id="eje53_verify2">
+                </form>
+                <p id="res-eje53"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje53_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer54">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Promedio Estatura <span>(Ejercicio 54)</span></h4>
+                <form action="">
+                  <label for="Eje54_N1">Personas a registrar</label>
+                  <input type="number" name="Eje54_N" id="Eje54_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje54_verify">
+                </form>
+                <p id="res-eje54"></p>
+                <p id="res1-eje54"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer55">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Ahorro a la Mano <span>(Ejercicio 55)</span></h4>
+                <form action="">
+                  <div class="col operaciones">
+                    <div class="row">
+                      <div class="col col-12 inpBancos">
+                        <input class="input-operacion" type="button" value="Ahorrar" id="opAhorr-2">
+                      </div>
+                      <div class="col col-sm-12 col-md-4 inpBancos">
+                        <input class="input-operacion" type="button" value="A. Semana" id="opAhorrSem-2">
+                      </div>
+                      <div class="col col-sm-6 col-md-4 inpBancos">
+                        <input class="input-operacion" type="button" value="A. Mes" id="opAhorrMes-2">
+                      </div>
+                      <div class="col col-sm-6 col-md-4 inpBancos">
+                        <input class="input-operacion" type="button" value="A. Año" id="opAhorrAno-2">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div class="row" id="panel">
+                  <h5>Ahorrar</h5>
+                  <h6>Semana: <span id="nSemana">0</span></h6>
+                  <label for="Eje55_N1">Monto a ahorrar</label>
+                  <input type="number" name="Eje55_N" id="Eje55_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Ahorrar" id="eje55_verify">
+                </div>
+                <div class="row paneles" id="panel1">
+                  <h5>Ahorrado a la semana</h5>
+                  <h6>Semana: <span id="nSemana2">0</span></h6>
+                  <p id="res2-eje55"></p>
+                </div>
+                <div class="row paneles" id="panel2">
+                  <h5>Ahorrado al Mes</h5>
+                  <h6>Mes: <span id="nMes">1</span></h6>
+                  <p id="res3-eje55"></p>
+                </div>
+                <div class="row paneles" id="panel3">
+                  <h5>Ahorrado al Año</h5>
+                  <h6>Año: <span id="nAno">0</span></h6>
+                  <p id="res4-eje55"></p>
+                </div>
+                <p id="res-eje55"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" id="eje55_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer56">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Serie Fibonacci <span>(Ejercicio 56)</span></h4>
+                <form action="">
+                  <label for="Eje56_N1">Limite a mostrar</label>
+                  <input type="number" name="Eje56_N" id="Eje56_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje56_verify">
+                </form>
+                <p id="res-eje56"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer57">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Pago a Empleados <span>(Ejercicio 57)</span></h4>
+                <form action="">
+                  <label for="Eje57_N1">Pago por hora</label>
+                  <input type="number" name="Eje57_N" id="Eje57_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje57_verify">
+                </form>
+                <p id="res-eje57"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer58">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Encuentro en la Via <span>(Ejercicio 58)</span></h4>
+                <form action="">
+                  <input class="input-btn" type="button" value="Ejecutar" id="eje58_verify">
+                </form>
+                <p id="res-eje58"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer59">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Tienda Tiki Taka <span>(Ejercicio 59)</span></h4>
+                <form action="">
+                  <label for="Eje59_N1">Número de ventas</label>
+                  <input type="number" name="Eje59_N" id="Eje59_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Ejecutar" id="eje59_verify">
+                </form>
+                <p id="res-eje59"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer60">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Constructora Tecnovivir <span>(Ejercicio 60)</span></h4>
+                <form action="">
+                  <label for="Eje60_N1">Horas trabajadas Empleado <span>1</span></label>
+                  <input type="number" name="Eje60_N" id="Eje60_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Ejecutar" id="eje60_verify">
+                </form>
+                <p id="res-eje60"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer61">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Caja Registradora <span>(Ejercicio 61)</span></h4>
+                <form action="">
+
+                </form>
+                <p id="res-eje61"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer62">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Suma de 10 Valores <span>(Ejercicio 62)</span></h4>
+                <form action="">
+                  <input class="input-btn" type="button" value="Ver" id="eje62_verify">
+                </form>
+                <p id="res-eje62"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer63">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Positivo o Neativo <span>(Ejercicio 63)</span></h4>
+                <form action="">
+                  <label for="Eje63_N1">Cantidad Valores a Ingresar <span>1</span></label>
+                  <input type="number" name="Eje63_N" id="Eje63_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Siguiente" id="eje63_verify">
+                </form>
+                <p id="res-eje63"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer64">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Suma de un Vector <span>(Ejercicio 64)</span></h4>
+                <form action="">
+                  <label for="Eje64_N1">Ingrese el valor <span>1</span></label>
+                  <input type="number" name="Eje64_N" id="Eje64_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje64_verify">
+                </form>
+                <p id="res-eje64"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer65">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Separando y Ordenando Vectores <span>(Ejercicio 65)</span></h4>
+                <form action="">
+                  <label for="Eje65_N1">Valores a Ingresar</label>
+                  <input type="number" name="Eje65_N" id="Eje65_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Siguiente" id="eje65_verify">
+                </form>
+                <p id="res-eje65"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer66">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Encontrando un Valor <span>(Ejercicio 66)</span></h4>
+                <form action="">
+                  <label for="Eje66_N1">Valores a Buscar</label>
+                  <input type="number" name="Eje66_N" id="Eje66_N1" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Verificar" id="eje66_verify">
+                </form>
+                <p id="res-eje66"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer67">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Reordenar un Vector <span>(Ejercicio 67)</span></h4>
+                <label for="Eje67_N1">Vector Original></label>
+                <p id="res-eje67"></p>
+                <input class="input-btn" type="button" value="Reordenar" id="eje66_verify">
+                <p id="res2-eje67"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer68">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Negativo STOP <span>(Ejercicio 68)</span></h4>
+                <form action="">
+                  <label for="Eje68_N1">Ingrese un número (Negativo: Salir)</label>
+                  <input type="number" name="Eje68_N" id="Eje68_N1" placeholder="Digite un número" />
+                </form>
+                <p id="res-eje68"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer69">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Matriz Notas Aprobadas <span>(Ejercicio 69)</span></h4>
+                <label for="Eje69_N1">Total Notas</label>
+                <p id="res-eje69"></p>
+                <label for="Eje69_N1">Notas Aprobadas</label>
+                <p id="res2-eje69"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer70">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Ordenar Matriz <span>(Ejercicio 70)</span></h4>
+                <label for="Eje70_N1">Números Almacenados</label>
+                <p id="res-eje70"></p>
+                <label for="Eje70_N1">Números Ordenados</label>
+                <p id="res2-eje70"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-ejercicio" id="box-mEjer71">
+            <div class="row row_ejers">
+              <div class="col">
+                <h4>Operaciones En una Matriz <span>(Ejercicio 71)</span></h4>
+                <label for="res-eje71">Resultado Multiplicación</label>
+                <p id="res-eje71"></p>
+                <label for="res2-eje71">Suma de las Columnas</label>
+                <p id="res2-eje71"></p>
+                <label for="res3-eje71">Suma de las Filas</label>
+                <p id="res3-eje71"></p>
+              </div>
+            </div>
+          </div>
+          <div class="box-icono-2">
+            <svg id="icon-ejers" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+              class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+
+</html>
