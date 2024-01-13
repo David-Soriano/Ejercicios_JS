@@ -127,6 +127,12 @@ function iniciar() {
   ejercicio57();
   ejercicio58();
   ejercicio59();
+  ejercicio60();
+  ejercicio61();
+  ejercicio62();
+  ejercicio63();
+  ejercicio64();
+  ejercicio65();
 }
 
 function mostrar(box) {
@@ -145,9 +151,11 @@ function ocultar_contenido() {
 
 function mostrar_contenido(numeroBoton) {
   var idContenido = "box-mEjer" + numeroBoton;
+  let bxPresentacion = document.getElementById('bx-presentacion');
   ocultar_contenido();
   // Mostrar el contenido asociado al botón
   document.getElementById(idContenido).style.display = "flex";
+  bxPresentacion.style.display = 'none';
 }
 
 function accionBtn(btn, box1, box2, box3) {
@@ -2562,5 +2570,346 @@ function ejercicio59() {
       insertTexto('res7-eje59', "<b>Valor Menores a 500: </b><br>$" + valorG3);
       insertTexto('res8-eje59', "<b>Valor Total: </b><br>$" + valorTot);
     }
+  })
+}
+
+function ejercicio60() {
+  let btn1 = document.getElementById('eje60_verify');
+  let btn2 = document.getElementById('eje60_verify2');
+  let span = 'contEmpleado';
+  btn2.style.display = 'none';
+
+  let empleado = 1;
+  let costo = 30000;
+  let pago = 0;
+  btn1.addEventListener('click', () => {
+    let horas = parseFloat(document.getElementById('Eje60_N1').value);
+    if (isNaN(horas)) {
+      insertTexto('res-eje60', "Llene los campos");
+    } else if (horas < 0) {
+      insertTexto('res-eje60', "Valor Incorrecto");
+    } else {
+      pago = (costo * horas);
+      insertTexto('res-eje60', "<b>Pago: </b>$" + pago.toFixed(2));
+      btn1.style.display = 'none';
+      btn2.style.display = 'block';
+    }
+  });
+
+  btn2.addEventListener('click', () => {
+    if (empleado >= 50) {
+      btn1.style.display = 'none';
+      btn2.style.display = 'none';
+      insertTexto('res-eje60', "Nomina Cancelada");
+    } else {
+      btn1.style.display = 'block';
+      btn2.style.display = 'none';
+      insertTexto('res-eje60', "");
+      empleado++;
+      insertTexto(span, empleado);
+      document.getElementById('Eje60_N1').value = "";
+      document.getElementById('Eje60_N1').focus();
+    }
+  });
+}
+
+function ejercicio61() {
+  let btnRegistrar = document.getElementById('eje61_verify');
+  let btnFactura = document.getElementById('eje61_verify2');
+  let btnAgregar = document.getElementById('eje61_verify3');
+  let bxPrincipal = document.getElementById('form-eje61');
+  let bxRegistro = document.getElementById('bx-registro');
+  let bxReload = document.getElementById('eje61_reload');
+  let bxPreview = document.getElementById('preview-productos');
+  let bxFacturas = document.getElementById('vista-facturas');
+
+  let opcion;
+  let cantidadProducto = 0;
+  let cantidadFacturas = 0;
+  let valorProducto = new Array();
+  let valoresTotales = new Array();
+  let total = 0;
+
+  btnAgregar.style.display = 'none';
+  bxRegistro.style.display = 'none';
+  bxReload.style.display = 'none';
+  bxPreview.style.display = 'none';
+  bxFacturas.style.display = 'none';
+
+  btnRegistrar.addEventListener('click', () => {
+    bxPrincipal.style.display = 'none';
+    bxRegistro.style.display = 'flex';
+    bxRegistro.style.flexDirection = 'column';
+    btnAgregar.style.display = 'block'
+    bxReload.style.display = 'block';
+
+    document.getElementById('Eje61_N1').focus();
+  })
+
+  btnAgregar.addEventListener('click', () => {
+    opcion = parseInt(document.getElementById('Eje61_N1').value);
+    if (isNaN(opcion)) {
+      insertTexto('res-eje61', "Llene los campos");
+    } else {
+      bxPreview.style.display = 'flex';
+      insertTexto('res-eje61', "");
+      switch (opcion) {
+        case 1:
+          valorProducto[cantidadProducto] = 10;
+          cantidadProducto++;
+          break;
+        case 2:
+          valorProducto[cantidadProducto] = 12;
+          cantidadProducto++;
+          break;
+        case 3:
+          valorProducto[cantidadProducto] = 7;
+          cantidadProducto++;
+          break;
+        case 4:
+          valorProducto[cantidadProducto] = 9;
+          cantidadProducto++;
+          break;
+        case 5:
+          cantidadFacturas++;
+          total = 0;
+          cantidadProducto = 0;
+          valorProducto = new Array();
+
+          bxPreview.style.display = 'none';
+          bxRegistro.style.display = 'none';
+          bxReload.style.display = 'none';
+          bxPrincipal.style.display = 'flex';
+
+          document.getElementById('Eje61_N1').value = "";
+          insertTexto('panelProductos', "")
+          insertTexto('eje61_sub', "");
+          insertTexto('eje61_iva', "");
+          insertTexto('eje61_tot', "");
+          break;
+        default:
+          insertTexto('res-eje61', "Opción incorrecta");
+          break;
+      }
+
+      let contenedor = document.getElementById('panelProductos');
+      let msj = '';
+      total = 0;
+      for (let i = 0; i < cantidadProducto; i++) {
+        msj += '<p>' + (i + 1) + '. Producto $' + valorProducto[i] + '</p>';
+        total += valorProducto[i];
+      }
+      contenedor.innerHTML = msj
+      insertTexto('eje61_sub', (total - (total * 0.19)).toFixed(2));
+      insertTexto('eje61_iva', (total * 0.19).toFixed(2));
+      insertTexto('eje61_tot', total.toFixed(2));
+      valoresTotales[cantidadFacturas] = total;
+    }
+  })
+
+  btnFactura.addEventListener('click', () => {
+    bxPrincipal.style.display = 'none';
+    bxReload.style.display = 'block';
+    bxFacturas.style.display = 'flex';
+    let msj = '';
+    total = 0;
+    for (let i = 0; i < cantidadFacturas; i++) {
+      msj += '<p>' + (i + 1) + '. Factura: ' + valoresTotales[i] + '</p>';
+      total += valoresTotales[i];
+    }
+    insertTexto('info-facturas', msj);
+    insertTexto('eje61_sub-2', (total - (total * 0.19)).toFixed(2));
+    insertTexto('eje61_iva-2', (total * 0.19).toFixed(2));
+    insertTexto('eje61_tot-2', total.toFixed(2));
+  })
+
+  bxReload.addEventListener('click', () => {
+    bxPrincipal.style.display = 'flex';
+    bxRegistro.style.display = 'none';
+    bxReload.style.display = 'none';
+    bxPreview.style.display = 'none';
+    bxFacturas.style.display = 'none';
+
+    document.getElementById('Eje61_N1').value = "";
+  })
+}
+
+function ejercicio62() {
+  document.getElementById('eje62_verify').addEventListener('click', () => {
+    let valores = n_aleatorios(10);
+    let msj = '';
+    let suma = 0;
+    for (let i = 0; i < valores.length; i++) {
+      msj += valores[i] + " ";
+      suma += valores[i];
+    }
+    insertTexto('res-eje62', "<b>Valores</b><br>" + msj);
+    insertTexto('res2-eje62', "<b>Suma Total:</b> " + suma);
+  })
+}
+
+function ejercicio63() {
+  document.getElementById('eje63_verify').addEventListener('click', () => {
+    let limite = parseInt(document.getElementById('Eje63_N1').value);
+    if (isNaN(limite)) {
+      insertTexto('res-eje63', "Llene los campos");
+    } else if (limite < 0) {
+      insertTexto('res-eje63', "Valor Incorrecto");
+    } else {
+      let valores = new Array();
+      let msj = '';
+      for (let i = 0; i < limite; i++) {
+        valores[i] = n_aleatorios2(-20, 20);
+        msj += valores[i] + " ";
+      }
+      let positivos = valores.filter((valor) => valor > 0);
+      let negativos = valores.filter((valor) => valor <= 0);
+
+      insertTexto('res-eje63', "<b>Valores</b><br>" + msj);
+      insertTexto('res1-eje63', "<b>Cantidad Positivos</b><br>" + positivos.length);
+      insertTexto('res2-eje63', "<b>Cantidad Negativos</b><br>" + negativos.length);
+    }
+  })
+}
+
+function ejercicio64() {
+  let contValor;
+  let i = 0;
+  let btn = document.getElementById('eje64_verify');
+  let bxReload = document.getElementById('eje64_reload');
+  let valores = new Array();
+  bxReload.style.display = 'none';
+  btn.addEventListener('click', () => {
+    let valor = parseInt(document.getElementById('Eje64_N1').value);
+
+    if (isNaN(valor)) {
+      insertTexto('res-eje64', "Llene los campos");
+    } else {
+      if (i < 10) {
+        valores[i] = valor;
+        i++;
+        contValor++;
+        if (contValor <= 10) {
+          insertTexto('eje64_span', contValor);
+        } else {
+          document.getElementById('Eje64_N1').disabled = true;
+          btn.style.display = 'none';
+          bxReload.style.display = 'block';
+          insertTexto('res-eje64', "<b>Vector</b><br>[" + valores + "]")
+        }
+      }
+      document.getElementById('Eje64_N1').value = "";
+      document.getElementById('Eje64_N1').focus();
+    }
+  })
+
+  bxReload.addEventListener('click', () => {
+    document.getElementById('Eje64_N1').disabled = false;
+    document.getElementById('Eje64_N1').value = "";
+    btn.style.display = 'block';
+    bxReload.style.display = 'none';
+    valores = new Array();
+    contValor = 1;
+    i = 0;
+    insertTexto('res-eje64', "");
+    insertTexto('eje64_span', contValor);
+  })
+}
+
+function ejercicio65() {
+  let bxValores = document.getElementById('eje65-valores');
+  bxValores.style.display = 'none';
+
+  let bxForm = document.getElementById('for-eje65');
+  let btnLimite = document.getElementById('eje65_verify');
+  let btnAgregar = document.getElementById('eje65_verify2');
+  let btnReload = document.getElementById('eje65_reload');
+  btnReload.style.display = 'none';
+  let limite;
+
+  let positivo = new Array();
+  let negativo = new Array();
+
+  let sumaPositivos = 0;
+  let sumaNegativos = 0;
+  let i = 0;
+  let j = 0;
+  let x = 0;
+  let contValor = 1;
+
+  btnLimite.addEventListener('click', () => {
+    limite = parseInt(document.getElementById('Eje65_N1').value);
+    if (isNaN(limite)) {
+      insertTexto('res-eje65', "Llene los campos");
+    } else if (limite < 0) {
+      insertTexto('res-eje65', "Valor incorrecto");
+    } else {
+      bxValores.style.display = 'flex';
+      bxForm.style.display = 'none';
+    }
+  })
+
+  btnAgregar.addEventListener('click', () => {
+    let valor = parseFloat(document.getElementById('Eje65_N2').value);
+
+    let msj1 = '';
+    let msj2 = '';
+    if (isNaN(valor)) {
+      insertTexto('res-eje65', "Llene los campos");
+    } else {
+      if (x < limite) {
+        if (valor > 0) {
+          positivo[i] = valor;
+          i++
+        } else {
+          negativo[j] = valor;
+          j++;
+        }
+        x++;
+        contValor++;
+        if(contValor <= limite){
+          insertTexto('eje65-span', contValor);
+          document.getElementById('Eje65_N2').value = "";
+          document.getElementById('Eje65_N2').focus();
+
+        } else{
+          bxValores.style.display = 'none';
+          
+          btnReload.style.display = 'block';
+          for (let i = 0; i < positivo.length; i++) {
+            sumaPositivos += positivo[i];
+            msj1 += positivo[i] + " ";
+          }
+          for (let i = 0; i < negativo.length; i++) {
+            sumaNegativos += negativo[i];
+            msj2 += negativo[i] + " ";
+          }
+          insertTexto('res-eje65', "");
+          insertTexto('res1-eje65', "<b>Valores Positivos:</b><br> " + msj1 + "<br><b>Número Mayor: </b>" + Math.max(...positivo) + "<br><b>Número Menor: </b>" + Math.min(...positivo) + "<br><b>Suma: </b>" + sumaPositivos);
+          insertTexto('res2-eje65', "<b>Valores Negativos:</b><br> " + msj2 + "<br><b>Número Mayor: </b>" + Math.max(...negativo) + "<br><b>Número Menor: </b>" + Math.min(...negativo) + "<br><b>Suma: </b>" + sumaNegativos);
+        }
+      }
+    }
+  })
+
+  btnReload.addEventListener('click', ()=>{
+    sumaNegativos = 0;
+    sumaPositivos = 0;
+    insertTexto('res1-eje65', "");
+    insertTexto('res2-eje65', "");
+    positivo = new Array();
+    negativo = new Array();
+    contValor = 1;
+    i = 0;
+    j = 0;
+    x = 0;
+    insertTexto('eje65-span', contValor);
+    
+    document.getElementById('Eje65_N2').value = "";
+    document.getElementById('Eje65_N1').focus();
+    document.getElementById('Eje65_N1').value = "";
+    bxForm.style.display = 'flex';
+    bxValores.style.display = 'none';
+    btnReload.style.display = 'none';
   })
 }

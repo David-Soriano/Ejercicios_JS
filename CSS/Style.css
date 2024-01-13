@@ -152,12 +152,32 @@ body::-webkit-scrollbar-thumb {
 
 /*-------------------------------------------------*/
 
-h2,h4,h5,h6 {
+h2, h3, h4,h5,h6 {
     color: #9c9494;
     margin-bottom: 20px;
     font-family: 'Overpass Mono', monospace;
 }
 
+#box-MEjers .Presentación{
+    font-family: 'Overpass Mono', monospace;
+    text-align: center;
+    width: 35%;
+}
+
+#box-MEjers .Presentación h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 15%;
+}
+#box-MEjers .Presentación h3{
+    font-size: 24px;
+}
+#box-MEjers .Presentación h4{
+    font-size: 14px;
+}
+#box-MEjers .Presentación h6{
+    margin: 1%;
+}
 #box-mEjer55 h6, #box-mEjer57 h6, #box-mEjer55 .paneles{
     font-size: 14px;
     font-weight: bold;
@@ -470,4 +490,59 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex;
         flex-direction: column;
     }
+}
+
+#bx-registro p{
+    text-align: start;
+}
+
+#preview-productos, #vista-facturas{
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#preview-productos p, #vista-facturas p{
+    margin: 0;
+    width: auto;
+    text-align: start;
+}
+#panelProductos p, #info-facturas p{
+    text-align: center;
+}
+#panelProductos, #info-facturas{
+    padding: 10px;
+    max-height: 24vh;
+    max-width: 35vh;
+    overflow: auto;
+}
+
+#info-facturas{
+    max-height: 14vh;
+}
+
+#panelProductos::-webkit-scrollbar{
+    width: 5px;
+}
+
+#panelProductos::-webkit-scrollbar-thumb{
+    background-color: #272727;
+    border-radius: 4px;
+}
+
+#panelProductos::-webkit-scrollbar-thumb:hover{
+    background-color: #3b3b3b;
+}
+
+#info-facturas::-webkit-scrollbar{
+    width: 5px;
+}
+
+#info-facturas::-webkit-scrollbar-thumb{
+    background-color: #272727;
+    border-radius: 4px;
+}
+
+#info-facturas::-webkit-scrollbar-thumb:hover{
+    background-color: #3b3b3b;
 }

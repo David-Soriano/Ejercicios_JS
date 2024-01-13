@@ -245,6 +245,15 @@
           <div class="row" id="caja-ejs"></div>
         </div>
         <div class="col" id="box-MEjers">
+          <div class="Presentación" id="bx-presentacion">
+            <h2>Bienvenido</h2>
+            <h3>Ejercios JavaScript</h3>
+            <h4>Seleccione un ejercicio y descubra el resultado</h4>
+            <p>____________</p>
+            <h6>By David Soriano &copy</h6>
+            <h6>ADSO - B</h6>
+            <h6>SENA</h6>
+          </div>
           <div class="box-ejercicio" id="box-mEjer1">
             <div class="row row_ejers">
               <div class="col">
@@ -1614,10 +1623,11 @@
               <div class="col">
                 <h4>Constructora Tecnovivir <span>(Ejercicio 60)</span></h4>
                 <form action="">
-                  <label for="Eje60_N1">Horas trabajadas Empleado <span>1</span></label>
+                  <label for="Eje60_N1">Horas trabajadas Empleado <span id="contEmpleado">1</span></label>
                   <input type="number" name="Eje60_N" id="Eje60_N1" placeholder="Digite un número" />
-                  <input class="input-btn" type="button" value="Ejecutar" id="eje60_verify">
+                  <input class="input-btn" type="button" value="Verificar" id="eje60_verify">
                 </form>
+                <input class="input-btn" type="button" value="Siguiente" id="eje60_verify2">
                 <p id="res-eje60"></p>
               </div>
             </div>
@@ -1627,10 +1637,49 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Caja Registradora <span>(Ejercicio 61)</span></h4>
-                <form action="">
-
-                </form>
+                <div action="" class="operaciones" id="form-eje61">
+                  <input type="button" value="Registrar" class="input-operacion" id="eje61_verify">
+                  <input type="button" value="Facturas" class="input-operacion" id="eje61_verify2">
+                </div>
+                <div id="bx-registro">
+                  <h5>Menú del día</h5>
+                  <section>
+                    <p><b>1.</b> Almuerzo completo - <em>10$</em>.</p>
+                    <p><b>2.</b> Almuerzo completo + domicilio - <em>$12</em>.</p>
+                    <p><b>3.</b> Bandeja - <em>$7</em>.</p>
+                    <p><b>4.</b> Bandeja + domicilio - <em>$9</em>.</p>
+                    <p><b>5.</b> <em>Salir.</em></p>
+                  </section>
+                  <label for="Eje61_N1">Número del menú</label>
+                  <input type="number" name="Eje61_N" id="Eje61_N1" placeholder="Digite una opción">
+                  <input class="input-btn" type="button" value="Agregar" id="eje61_verify3">
+                </div>
                 <p id="res-eje61"></p>
+                <div class="row" id="preview-productos">
+                  <span id="panelProductos"></span>
+                  <p>_________________________</p>
+                  <p>Subtotal: $<span id="eje61_sub">0</span></p>
+                  <p>IVA: $<span id="eje61_iva">0</span></p>
+                  <p>Total: $<span id="eje61_tot">0</span></p>
+                </div>
+
+                <div class="row" id="vista-facturas">
+                  <h5>Facturas</h5>
+                  <span id="info-facturas"></span>
+                  <p>_________________________</p>
+                  <p>Subtotal: $<span id="eje61_sub-2">0</span></p>
+                  <p>IVA: $<span id="eje61_iva-2">0</span></p>
+                  <p>Total: $<span id="eje61_tot-2">0</span></p>
+                </div>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-chevron-double-left" id="eje61_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    <path fill-rule="evenodd"
+                      d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1643,6 +1692,7 @@
                   <input class="input-btn" type="button" value="Ver" id="eje62_verify">
                 </form>
                 <p id="res-eje62"></p>
+                <p id="res2-eje62"></p>
               </div>
             </div>
           </div>
@@ -1652,11 +1702,19 @@
               <div class="col">
                 <h4>Positivo o Neativo <span>(Ejercicio 63)</span></h4>
                 <form action="">
-                  <label for="Eje63_N1">Cantidad Valores a Ingresar <span>1</span></label>
+                  <label for="Eje63_N1">Cantidad valores a mostrar</label>
                   <input type="number" name="Eje63_N" id="Eje63_N1" placeholder="Digite un número" />
                   <input class="input-btn" type="button" value="Siguiente" id="eje63_verify">
                 </form>
                 <p id="res-eje63"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje63"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje63"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1666,11 +1724,19 @@
               <div class="col">
                 <h4>Suma de un Vector <span>(Ejercicio 64)</span></h4>
                 <form action="">
-                  <label for="Eje64_N1">Ingrese el valor <span>1</span></label>
+                  <label for="Eje64_N1">Ingrese el valor <span id="eje64_span">1</span></label>
                   <input type="number" name="Eje64_N" id="Eje64_N1" placeholder="Digite un número" />
                   <input class="input-btn" type="button" value="Verificar" id="eje64_verify">
                 </form>
                 <p id="res-eje64"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje64_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1679,12 +1745,33 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Separando y Ordenando Vectores <span>(Ejercicio 65)</span></h4>
-                <form action="">
+                <form action="" id="for-eje65">
                   <label for="Eje65_N1">Valores a Ingresar</label>
                   <input type="number" name="Eje65_N" id="Eje65_N1" placeholder="Digite un número" />
                   <input class="input-btn" type="button" value="Siguiente" id="eje65_verify">
                 </form>
+                <div class="row" id="eje65-valores">
+                  <label for="Eje65_N1">Valores <span id="eje65-span">1</span></label>
+                  <input type="number" name="Eje65_N" id="Eje65_N2" placeholder="Digite un número" />
+                  <input class="input-btn" type="button" value="Ingresar" id="eje65_verify2">
+                </div>
                 <p id="res-eje65"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje65"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje65"></p>
+                  </div>
+                </div>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje65_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
