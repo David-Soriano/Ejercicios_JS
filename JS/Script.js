@@ -3091,69 +3091,54 @@ function ejercicio71() {
   let filas = 3;
   let columnas = 3;
   let cont;
-  let valor;
   let Matriz1 = new Array(filas);
   let Matriz2 = new Array(filas);
-  let fl;
-  let cl;
-  let span1 = 'eje71-span1';
-  let span2 = 'eje71-span2';
+  let bx1 = document.getElementById('eje71-bx3');
+  let bxReload = document.getElementById('eje71_reload');
+  bx1.style.display = 'none';
+  bxReload.style.display = 'none';
+  let btn = document.getElementById('eje71_verify');
 
-  let bx1 = document.getElementById('eje71-bx1');
-  let bx2 = document.getElementById('eje71-bx2');
-  let bx3 = document.getElementById('eje71-bx3');
-
-  let btn1 = document.getElementById('eje71_verify1');
-  let btn2 = document.getElementById('eje71_verify2');
-
-  for (let i = 0; i < columnas; i++) {
-    Matriz1[i] = new Array(columnas);
-    Matriz2[i] = new Array(columnas);
-  }
-  fl = 0;
-  cl = 0;
-  cont = 1;
-  btn1.addEventListener('click', () => {
-
-    valor = parseFloat(document.getElementById('Eje71_N1').value);
-    if (isNaN(valor)) {
-      insertTexto('res-eje71', "Llene los campos");
-    } else {
-      insertTexto('res-eje71', "");
-      for (let f = 0; f < filas; f++) {
-        for (let c = 0; c < columnas; c++) {
-          console.log(valor)
+  btn.addEventListener('click', () => {
+    btn.style.display = 'none';
+    bx1.style.display = 'flex';
+    bxReload.style.display = 'flex';
+    for (let i = 0; i < columnas; i++) {
+      Matriz1[i] = new Array(columnas);
+      Matriz2[i] = new Array(columnas);
+    }
+    cont = 1;
+    for (let f = 0; f < filas; f++) {
+      for (let c = 0; c < columnas; c++) {
+        let valor = parseFloat(prompt('Valor ' + cont + ' Matriz 1'))
+        if (isNaN(valor)) {
+          alert("Llene los campos")
+        } else {
           Matriz1[f][c] = valor;
           cont++;
-          insertTexto(span1, cont);
         }
       }
     }
-  })
-  fl = 0;
-  cl = 0;
-  cont = 1;
-  btn2.addEventListener('click', () => {
-
-    if (fl < filas) {
-      if (cl < columnas) {
-        valor = parseFloat(document.getElementById('Eje71_N2').value);
+    cont = 1;
+    for (let f = 0; f < filas; f++) {
+      for (let c = 0; c < columnas; c++) {
+        let valor = parseFloat(prompt('Valor ' + cont + ' Matriz 2'))
         if (isNaN(valor)) {
-          insertTexto('res-eje71', "Llene los campos");
+          alert("Llene los campos")
         } else {
-          insertTexto('res-eje71', "");
-          console.log(valor)
-          Matriz2[fl][cl] = valor;
+          Matriz2[f][c] = valor;
           cont++;
-          cl++;
-          insertTexto(span2, cont);
         }
       }
-      fl++;
     }
     console.log(Matriz1);
     console.log(Matriz2);
   })
 
-
+  bxReload.addEventListener('click', ()=>{
+    btn.style.display = 'block';
+    bx1.style.display = 'none';
+    bxReload.style.display = 'none';
+    ejercicio71();
+  })
 }
