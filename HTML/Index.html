@@ -1781,11 +1781,19 @@
               <div class="col">
                 <h4>Encontrando un Valor <span>(Ejercicio 66)</span></h4>
                 <form action="">
-                  <label for="Eje66_N1">Valores a Buscar</label>
+                  <label for="Eje66_N1">Valor a Buscar (Min: 1 - Max: 100)</label>
                   <input type="number" name="Eje66_N" id="Eje66_N1" placeholder="Digite un número" />
-                  <input class="input-btn" type="button" value="Verificar" id="eje66_verify">
+                  <input class="input-btn" type="button" value="Buscar" id="eje66_verify">
                 </form>
                 <p id="res-eje66"></p>
+                <div class="row">
+                  <div class="col-6">
+                    <p id="res1-eje66"></p>
+                  </div>
+                  <div class="col-6">
+                    <p id="res2-eje66"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1794,9 +1802,8 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Reordenar un Vector <span>(Ejercicio 67)</span></h4>
-                <label for="Eje67_N1">Vector Original></label>
                 <p id="res-eje67"></p>
-                <input class="input-btn" type="button" value="Reordenar" id="eje66_verify">
+                <input class="input-btn" type="button" value="Reordenar" id="eje67_verify">
                 <p id="res2-eje67"></p>
               </div>
             </div>
@@ -1808,9 +1815,18 @@
                 <h4>Negativo STOP <span>(Ejercicio 68)</span></h4>
                 <form action="">
                   <label for="Eje68_N1">Ingrese un número (Negativo: Salir)</label>
-                  <input type="number" name="Eje68_N" id="Eje68_N1" placeholder="Digite un número" />
+                  <input type="number" name="Eje68_N" id="Eje68_N1" placeholder="Digite un número"
+                    onkeyup="(ejercicio68())" />
                 </form>
                 <p id="res-eje68"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje68_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1823,6 +1839,14 @@
                 <p id="res-eje69"></p>
                 <label for="Eje69_N1">Notas Aprobadas</label>
                 <p id="res2-eje69"></p>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje69_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1831,10 +1855,28 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Ordenar Matriz <span>(Ejercicio 70)</span></h4>
-                <label for="Eje70_N1">Números Almacenados</label>
-                <p id="res-eje70"></p>
-                <label for="Eje70_N1">Números Ordenados</label>
-                <p id="res2-eje70"></p>
+                <div class="col">
+                  <label for="Eje70_N1">Números Almacenados</label>
+                  <p id="res-eje70"></p>
+                  <label for="Eje70_N1">Números Ordenados</label>
+                  <p id="res2-eje70"></p>
+                  <div class="row">
+                    <div class="col-6">
+                      <p id="res3-eje70"></p>
+                    </div>
+                    <div class="col-6">
+                      <p id="res4-eje70"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="reload">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-arrow-clockwise" id="eje70_reload" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                      d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -1843,12 +1885,25 @@
             <div class="row row_ejers">
               <div class="col">
                 <h4>Operaciones En una Matriz <span>(Ejercicio 71)</span></h4>
-                <label for="res-eje71">Resultado Multiplicación</label>
+                <div class="col" id="eje71-bx1">
+                  <label for="">Valor <span id="eje71-span1">1</span> Matriz 1</label>
+                  <input type="number" name="Eje71_N1" id="Eje71_N1" placeholder="Digite un número">
+                  <input type="button" value="Ingresar" class="input-btn" id="eje71_verify1">
+                </div>
+                <div class="col" id="eje71-bx2">
+                  <label for="">Valor <span id="eje71-span2">1</span> Matriz 2</label>
+                  <input type="number" name="Eje71_N1" id="Eje71_N2" placeholder="Digite un número">
+                  <input type="button" value="Ingresar" class="input-btn" id="eje71_verify2">
+                </div>
+                <div class="col" id="eje71-bx3">
+                  <label for="res-eje71">Resultado Multiplicación</label>
+                  <p id="res1-eje71"></p>
+                  <label for="res2-eje71">Suma de las Columnas</label>
+                  <p id="res2-eje71"></p>
+                  <label for="res3-eje71">Suma de las Filas</label>
+                  <p id="res3-eje71"></p>
+                </div>
                 <p id="res-eje71"></p>
-                <label for="res2-eje71">Suma de las Columnas</label>
-                <p id="res2-eje71"></p>
-                <label for="res3-eje71">Suma de las Filas</label>
-                <p id="res3-eje71"></p>
               </div>
             </div>
           </div>

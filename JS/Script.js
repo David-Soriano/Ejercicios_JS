@@ -133,6 +133,11 @@ function iniciar() {
   ejercicio63();
   ejercicio64();
   ejercicio65();
+  ejercicio66();
+  ejercicio67();
+  ejercicio69();
+  ejercicio70();
+  ejercicio71();
 }
 
 function mostrar(box) {
@@ -286,6 +291,13 @@ function n_aleatorios(limite) {
 }
 function n_aleatorios2(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+function n_decimalesAleatorios(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function compararNumeros(a, b) {
+  return b - a;
 }
 //------------------------------------------------------------
 function ejercicio1() {
@@ -2318,35 +2330,34 @@ function ejercicio55() {
     btn2.style.display = "none";
     btn3.style.display = "none";
     btn4.style.display = "none";
+  });
 
-    btnAhorrar.addEventListener("click", () => {
-      monto = parseFloat(document.getElementById("Eje55_N1").value);
-      if (isNaN(monto)) {
-        insertTexto("res-eje55", "Llene los campos");
-      } else {
-        ahorrSem = monto;
-        ahorrTotSem += monto;
-        nSemana++;
-        insertTexto("res-eje55", "Monto ahorrado");
-        insertTexto(inf1, nSemana);
-        insertTexto(inf2, nSemana);
-        if (nSemana >= 4) {
-          nMes++;
-          ahorrMes += ahorrTotSem;
-          insertTexto(inf3, nMes);
-          nSemana = 0;
-          insertTexto(inf2, ahorrTotSem);
-          ahorrTotSem = 0;
-          if (nMes >= 12) {
-            nAno++;
-            nMes = 0;
-            ahorrAno += ahorrMes;
-            ahorrMes = 0;
-            insertTexto(inf4, nAno);
-          }
+  btnAhorrar.addEventListener("click", () => {
+    monto = parseFloat(document.getElementById("Eje55_N1").value);
+    if (isNaN(monto)) {
+      insertTexto("res-eje55", "Llene los campos");
+    } else {
+      ahorrSem = monto;
+      ahorrTotSem += monto;
+      nSemana++;
+      insertTexto("res-eje55", "Monto ahorrado");
+      insertTexto(inf1, nSemana);
+      insertTexto(inf2, nSemana);
+      if (nSemana >= 4) {
+        nMes++;
+        nSemana = 0;
+        ahorrMes += ahorrTotSem;
+        ahorrTotSem = 0;
+        insertTexto(inf3, nMes);
+        if (nMes >= 12) {
+          nAno++;
+          nMes = 0;
+          ahorrAno += ahorrMes;
+          ahorrMes = 0;
+          insertTexto(inf4, nAno);
         }
       }
-    });
+    }
   });
 
   btn2.addEventListener("click", () => {
@@ -2867,14 +2878,14 @@ function ejercicio65() {
         }
         x++;
         contValor++;
-        if(contValor <= limite){
+        if (contValor <= limite) {
           insertTexto('eje65-span', contValor);
           document.getElementById('Eje65_N2').value = "";
           document.getElementById('Eje65_N2').focus();
 
-        } else{
+        } else {
           bxValores.style.display = 'none';
-          
+
           btnReload.style.display = 'block';
           for (let i = 0; i < positivo.length; i++) {
             sumaPositivos += positivo[i];
@@ -2892,7 +2903,7 @@ function ejercicio65() {
     }
   })
 
-  btnReload.addEventListener('click', ()=>{
+  btnReload.addEventListener('click', () => {
     sumaNegativos = 0;
     sumaPositivos = 0;
     insertTexto('res1-eje65', "");
@@ -2904,7 +2915,7 @@ function ejercicio65() {
     j = 0;
     x = 0;
     insertTexto('eje65-span', contValor);
-    
+
     document.getElementById('Eje65_N2').value = "";
     document.getElementById('Eje65_N1').focus();
     document.getElementById('Eje65_N1').value = "";
@@ -2912,4 +2923,237 @@ function ejercicio65() {
     bxValores.style.display = 'none';
     btnReload.style.display = 'none';
   })
+}
+
+function ejercicio66() {
+  document.getElementById('eje66_verify').addEventListener('click', () => {
+    let valor = parseInt(document.getElementById('Eje66_N1').value);
+    let valores = new Array();
+    let vEncontrado;
+    let posicion;
+    let encontrado = true;
+
+    if (isNaN(valor)) {
+      insertTexto('res-eje66', "Llene los campos");
+      insertTexto('res1-eje66', "");
+      insertTexto('res2-eje66', "");
+    } else {
+      //Llenar Array
+      for (let i = 0; i < 100; i++) {
+        valores[i] = i + 1;
+      }
+      for (let i = 0; i < valores.length; i++) {
+        if (valores[i] == valor) {
+          vEncontrado = valores[i];
+          posicion = i;
+          encontrado = true;
+          break;
+        } else {
+          encontrado = false
+        }
+      }
+      if (encontrado) {
+        insertTexto('res-eje66', "");
+        insertTexto('res1-eje66', "<b>Valor</b><br>" + vEncontrado);
+        insertTexto('res2-eje66', "<b>Posición</b><br>[" + posicion + "]");
+      } else {
+        insertTexto('res-eje66', "Valor no encontrado");
+        insertTexto('res1-eje66', "");
+        insertTexto('res2-eje66', "");
+      }
+    }
+  })
+}
+
+function ejercicio67() {
+  let valores = new Array();
+  let msj = '';
+  for (let i = 0; i < 25; i++) {
+    valores[i] = n_aleatorios2(1, 50);
+  }
+  for (let valor of valores) {
+    msj += valor + " ";
+  }
+  insertTexto('res-eje67', "<b>Vector Original</b><br>" + msj);
+  document.getElementById('eje67_verify').addEventListener('click', () => {
+    let nuevoVector = new Array();
+    let msj2 = '';
+    for (let i = 24; i >= 0; i--) {
+      nuevoVector.push(valores[i])
+    }
+    for (let valor of nuevoVector) {
+      msj2 += valor + " ";
+    }
+    insertTexto('res2-eje67', "<b>Nuevo Vector</b><br>" + msj2);
+  })
+}
+
+function ejercicio68() {
+  let valor = parseFloat(document.getElementById('Eje68_N1').value);
+  let mValor = document.getElementById('Eje68_N1');
+  let bxReload = document.getElementById('eje68_reload');
+  bxReload.style.display = 'none';
+
+  if (valor > 0) {
+    insertTexto('res-eje68', valor + " es positivo");
+    mValor.value = "";
+    mValor.focus();
+  } else if (valor < 0) {
+    insertTexto('res-eje68', "Se ingresó un valor negativo");
+    mValor.disabled = true;
+    bxReload.style.display = 'block';
+  }
+
+  bxReload.addEventListener('click', () => {
+    mValor.disabled = false;
+    bxReload.style.display = 'none';
+    mValor.value = "";
+    mValor.focus();
+    insertTexto('res-eje68', "");
+  })
+}
+
+function ejercicio69() {
+  let filas = 5;
+  let columnas = 5;
+  let Notas = new Array(filas);
+
+  let msj = '';
+  let msj2 = '';
+  for (let i = 0; i < filas; i++) {
+    Notas[i] = new Array(columnas);
+  }
+  for (let f = 0; f < 5; f++) {
+    for (let c = 0; c < 5; c++) {
+      Notas[f][c] = n_decimalesAleatorios(1, 5).toFixed(1);
+      msj += Notas[f][c] + " ";
+    }
+    msj += "<br>";
+  }
+
+  for (let f = 0; f < 5; f++) {
+    for (let c = 0; c < 5; c++) {
+      if (Notas[f][c] >= 3.5) {
+        msj2 += Notas[f][c] + " ";
+      }
+    }
+    msj2 += "<br>";
+  }
+  insertTexto('res-eje69', msj);
+  insertTexto('res2-eje69', msj2);
+  document.getElementById('eje69_reload').addEventListener('click', () => {
+    ejercicio69();
+  })
+}
+
+function ejercicio70() {
+  let filas = 5;
+  let columnas = 5;
+  let valores = new Array(filas);
+  let lista = new Array();
+  let msj1 = '';
+  let msj2 = '';
+  for (let i = 0; i < 5; i++) {
+    valores[i] = new Array(columnas);
+  }
+  for (let f = 0; f < filas; f++) {
+    for (let c = 0; c < columnas; c++) {
+      valores[f][c] = n_aleatorios2(1, 100);
+      msj1 += valores[f][c] + " ";
+    }
+    msj1 += "<br>";
+  }
+  for (let f = 0; f < filas; f++) {
+    for (let c = 0; c < columnas; c++) {
+      lista[f * 5 + c] = valores[f][c];
+    }
+  }
+  lista.sort(compararNumeros);
+  let i = 24;
+  for (let f = 0; f < filas; f++) {
+    for (let c = 0; c < columnas; c++) {
+      msj2 += lista[i] + " ";
+      i--;
+    }
+    msj2 += "<br>";
+  }
+
+  insertTexto('res-eje70', msj1);
+  insertTexto('res2-eje70', msj2);
+  insertTexto('res3-eje70', "<b>Número Mayor</b><br>" + Math.max(...lista));
+  insertTexto('res4-eje70', "<b>Número Menor</b><br>" + Math.min(...lista));
+  document.getElementById('eje70_reload').addEventListener('click', () => {
+    ejercicio70();
+  })
+}
+
+function ejercicio71() {
+  let filas = 3;
+  let columnas = 3;
+  let cont;
+  let valor;
+  let Matriz1 = new Array(filas);
+  let Matriz2 = new Array(filas);
+  let fl;
+  let cl;
+  let span1 = 'eje71-span1';
+  let span2 = 'eje71-span2';
+
+  let bx1 = document.getElementById('eje71-bx1');
+  let bx2 = document.getElementById('eje71-bx2');
+  let bx3 = document.getElementById('eje71-bx3');
+
+  let btn1 = document.getElementById('eje71_verify1');
+  let btn2 = document.getElementById('eje71_verify2');
+
+  for (let i = 0; i < columnas; i++) {
+    Matriz1[i] = new Array(columnas);
+    Matriz2[i] = new Array(columnas);
+  }
+  fl = 0;
+  cl = 0;
+  cont = 1;
+  btn1.addEventListener('click', () => {
+
+    valor = parseFloat(document.getElementById('Eje71_N1').value);
+    if (isNaN(valor)) {
+      insertTexto('res-eje71', "Llene los campos");
+    } else {
+      insertTexto('res-eje71', "");
+      for (let f = 0; f < filas; f++) {
+        for (let c = 0; c < columnas; c++) {
+          console.log(valor)
+          Matriz1[f][c] = valor;
+          cont++;
+          insertTexto(span1, cont);
+        }
+      }
+    }
+  })
+  fl = 0;
+  cl = 0;
+  cont = 1;
+  btn2.addEventListener('click', () => {
+
+    if (fl < filas) {
+      if (cl < columnas) {
+        valor = parseFloat(document.getElementById('Eje71_N2').value);
+        if (isNaN(valor)) {
+          insertTexto('res-eje71', "Llene los campos");
+        } else {
+          insertTexto('res-eje71', "");
+          console.log(valor)
+          Matriz2[fl][cl] = valor;
+          cont++;
+          cl++;
+          insertTexto(span2, cont);
+        }
+      }
+      fl++;
+    }
+    console.log(Matriz1);
+    console.log(Matriz2);
+  })
+
+
 }
