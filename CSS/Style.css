@@ -52,9 +52,9 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
 
-    position: relative;
-    left: -200px;
-    top: -200px;
+    position: fixed;
+    top: 10%;
+    left: 18%;
 
     border: 1px solid rgba(215, 81, 14, 0.77);
     background-color: #09080857;
@@ -138,15 +138,15 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 850px) {
     .box-icono {
-        position: relative;
-        left: 0;
+        position: fixed;
+        left: 1%;
     }
 }
 
 @media (max-height: 460px) {
     .box-icono {
-        position: relative;
-        top: -100px;
+        position: fixed;
+        top: 50%;
     }
 }
 

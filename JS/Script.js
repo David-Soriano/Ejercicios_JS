@@ -1,5 +1,4 @@
 window - addEventListener("load", iniciar);
-
 function iniciar() {
   let bxMenu = document.getElementById("bx-menu");
   let bxEje1 = document.getElementById("box-contrasena");
@@ -63,7 +62,7 @@ function iniciar() {
   accionBtn(btnEje8, bxMenu, bxEje8, bxVolver);
   accionVolver(btnVolver, bxVolver, bxEje8, bxMenu);
 
-  accionBtn(btnMEjers, bxMenu, bxMEjers, bxVolver);
+  accionBtn(btnMEjers, bxMenu, bxMEjers, bxVolver, bxVolver);
   accionVolver(btnVolver, bxVolver, bxMEjers, bxMenu);
 
   btnMEjers.addEventListener("click", crearmenu);
@@ -72,6 +71,8 @@ function iniciar() {
 
   nLimite();
   validarContrasena();
+  serieFibonacci();
+
   ocultar_contenido();
 
   ejercicio1();
@@ -163,11 +164,12 @@ function mostrar_contenido(numeroBoton) {
   bxPresentacion.style.display = 'none';
 }
 
-function accionBtn(btn, box1, box2, box3) {
+function accionBtn(btn, box1, box2, box3, box4) {
   btn.addEventListener("click", () => {
     ocultar(box1);
     mostrar(box2);
     mostrar(box3);
+    ocultar(box4);
   });
 }
 
@@ -209,22 +211,17 @@ function validarContrasena() {
     let inpContrasena1 = document.getElementById("password-1");
     let inpContrasena2 = document.getElementById("password-2");
 
-    console.log(inpContrasena1, inpContrasena2);
-
     if (inpContrasena1.value == "" || inpContrasena2.value == "") {
       rta.innerHTML = "Campos Vacíos.";
-      validarContrasena();
     } else {
       if (inpContrasena1.value == inpContrasena2.value) {
         rta.innerHTML = "Las contraseñas coinciden.";
         inpContrasena1.focus();
         inpContrasena2.focus();
-        validarContrasena();
       } else {
         rta.innerHTML = "Las contraseñas no coinciden.";
         inpContrasena1.focus();
         inpContrasena2.focus();
-        validarContrasena();
       }
     }
   });
@@ -232,44 +229,69 @@ function validarContrasena() {
 
 function validarNPrimo(valor) {
   let resNPrimo = document.getElementById("resNPrimo");
-  let esPrimo = false;
-  if (valor == 0) {
+  parseFloat(valor);
+  if (isNaN(valor)) {
     resNPrimo.innerHTML = "Inserte un número";
   } else {
-    if (valor <= 1) {
-      esPrimo = false;
-    }
-    for (let i = 2; i * i <= valor; i++) {
-      if (valor % i == 0) {
-        esPrimo = false;
-      } else {
-        esPrimo = true;
-      }
-    }
-
-    if (esPrimo == true) {
+    if (esPrimo(valor)) {
       resNPrimo.innerHTML = "Es primo";
     } else {
       resNPrimo.innerHTML = "Es Compuesto";
     }
-    esPrimo = false;
   }
 }
 
 function nLimite() {
   let btnNP2 = document.getElementById("gen-nL");
-
   btnNP2.addEventListener("click", () => {
+
     let resNP = document.getElementById("resCantNP");
-    let valLmt = document.getElementById("numeroP2");
+    let valorLimite = parseInt(document.getElementById("numeroP2").value);
+    let valor = 2;
     let num = "";
-    for (let i = 0; i < valLmt.value; i++) {
-      num += i + 1 + " ";
+    if (isNaN(valorLimite)) {
+      insertTexto('resCantNP', "Llene los campos");
+    } else if (valorLimite < 0) {
+      insertTexto('resCantNP', "Valor incorrecto");
+    } else {
+      let i = 0;
+      while (i < valorLimite) {
+        if (esPrimo(valor)) {
+          num += valor + " ";
+          i++;
+        }
+        valor++;
+      }
+      resNP.innerHTML = num;
     }
-    resNP.innerHTML = num;
   });
 }
 
+function serieFibonacci() {
+  document.getElementById('eje-fibonacci').addEventListener('click', () => {
+    let limite = parseInt(document.getElementById('lmtFibonacci').value);
+    if (isNaN(limite)) {
+      insertTexto('res-fibonacci', "Llene los campos");
+    } else if (limite < 0) {
+      insertTexto('res-fibonacci', "Valor Incorrecto");
+    } else{
+      let i = 2;
+      let valor1 = 0;
+      let valor2 = 1;
+      let valor3 = 0;
+      let serie = "";
+      serie += valor1 + " " + valor2 + " ";
+      while(i < limite){
+        valor3 = (valor1 + valor2);
+        serie += valor3 + " ";
+        valor1 = valor2;
+        valor2 = valor3;
+        i++;
+      }
+      insertTexto('res-fibonacci', serie);
+    }
+  })
+}
 function esPrimo(numero) {
   if (numero <= 1) {
     return false;
@@ -289,9 +311,11 @@ function n_aleatorios(limite) {
   }
   return numeros;
 }
+
 function n_aleatorios2(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 function n_decimalesAleatorios(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -3135,7 +3159,7 @@ function ejercicio71() {
     console.log(Matriz2);
   })
 
-  bxReload.addEventListener('click', ()=>{
+  bxReload.addEventListener('click', () => {
     btn.style.display = 'block';
     bx1.style.display = 'none';
     bxReload.style.display = 'none';
