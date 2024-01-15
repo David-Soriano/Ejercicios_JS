@@ -2726,7 +2726,8 @@ function ejercicio61() {
           insertTexto('res-eje61', "Opción incorrecta");
           break;
       }
-
+      document.getElementById('Eje61_N1').value = "";
+      document.getElementById('Eje61_N1').focus();
       let contenedor = document.getElementById('panelProductos');
       let msj = '';
       total = 0;
@@ -2749,7 +2750,7 @@ function ejercicio61() {
     let msj = '';
     total = 0;
     for (let i = 0; i < cantidadFacturas; i++) {
-      msj += '<p>' + (i + 1) + '. Factura: ' + valoresTotales[i] + '</p>';
+      msj += '<p>' + (i + 1) + '. Factura: $' + valoresTotales[i] + '</p>';
       total += valoresTotales[i];
     }
     insertTexto('info-facturas', msj);
