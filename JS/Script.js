@@ -274,14 +274,14 @@ function serieFibonacci() {
       insertTexto('res-fibonacci', "Llene los campos");
     } else if (limite < 0) {
       insertTexto('res-fibonacci', "Valor Incorrecto");
-    } else{
+    } else {
       let i = 2;
       let valor1 = 0;
       let valor2 = 1;
       let valor3 = 0;
       let serie = "";
       serie += valor1 + " " + valor2 + " ";
-      while(i < limite){
+      while (i < limite) {
         valor3 = (valor1 + valor2);
         serie += valor3 + " ";
         valor1 = valor2;
@@ -913,7 +913,22 @@ function ejercicio17() {
   });
 }
 
-function ejercicio18() { }
+function ejercicio18() {
+  document.getElementById('eje18_verify').addEventListener('click', () => {
+    let msj = '';
+    let h;
+    let m;
+    let s;
+    for (h = 0; h < 24; h++) {
+      for (m = 0; m < 60; m++) {
+        for (s = 0; s < 60; s++) {
+          msj += h + " : " + m + " : " + s + " <br>";
+        }
+      }
+    }
+    insertTexto('res-eje18', msj);
+  })
+}
 
 function ejercicio19() {
   document.getElementById("eje19_verify").addEventListener("click", () => {
@@ -3118,8 +3133,18 @@ function ejercicio71() {
   let cont;
   let Matriz1 = new Array(filas);
   let Matriz2 = new Array(filas);
+  let Matriz3 = new Array(filas);
+
+  let smFilas = [];
+  let smColumnas = [];
   let bx1 = document.getElementById('eje71-bx3');
   let bxReload = document.getElementById('eje71_reload');
+
+  let msj1 = '';
+  let msj2 = '';
+  let msj3 = '';
+  let msj4 = '';
+  let msj5 = '';
   bx1.style.display = 'none';
   bxReload.style.display = 'none';
   let btn = document.getElementById('eje71_verify');
@@ -3131,6 +3156,7 @@ function ejercicio71() {
     for (let i = 0; i < columnas; i++) {
       Matriz1[i] = new Array(columnas);
       Matriz2[i] = new Array(columnas);
+      Matriz3[i] = new Array(columnas);
     }
     cont = 1;
     for (let f = 0; f < filas; f++) {
@@ -3156,14 +3182,62 @@ function ejercicio71() {
         }
       }
     }
-    console.log(Matriz1);
-    console.log(Matriz2);
+
+    for (let f = 0; f < filas; f++) {
+      for (let c = 0; c < filas; c++) {
+        Matriz3[f][c] = 0;
+        for (let i = 0; i < filas; i++) {
+          Matriz3[f][c] += Matriz1[f][i] * Matriz2[i][c];
+        }
+      }
+    }
+
+    smFilas = [0];
+    smColumnas = [0];
+    for (let f = 0; f < filas; f++) {
+      for (let c = 0; c < columnas; c++) {
+        msj1 += Matriz1[f][c] + " ";
+        msj2 += Matriz2[f][c] + " ";
+        msj3 += Matriz3[f][c] + " ";
+      }
+      msj1 += "<br>";
+      msj2 += "<br>";
+      msj3 += "<br>";
+    }
+
+    for (let f = 0; f < filas; f++) {
+      smFilas.push(0);
+        smColumnas.push(0);
+      for (let c = 0; c < columnas; c++) {
+        smFilas[f] += Matriz3[f][c];
+        smColumnas[c] += Matriz3[f][c];
+        console.log(smFilas);
+        console.log(smColumnas);
+      }
+    }
+
+    for (let i = 0; i < filas; i++) {
+      msj4 += smFilas[i] + " ";
+      msj5 += smColumnas[i] + " ";
+    }
+
+    insertTexto('res4-eje71', "<b>MATRIZ 1</b><br>" + msj1);
+    insertTexto('res5-eje71', "<b>MATRIZ 2</b><br>" + msj2);
+    insertTexto('res1-eje71', msj3);
+    insertTexto('res2-eje71', msj5);
+    insertTexto('res3-eje71', msj4);
   })
 
   bxReload.addEventListener('click', () => {
     btn.style.display = 'block';
     bx1.style.display = 'none';
     bxReload.style.display = 'none';
-    ejercicio71();
+    Matriz1 = new Array(filas).fill(0).map(() => new Array(columnas).fill(0));
+    Matriz2 = new Array(filas).fill(0).map(() => new Array(columnas).fill(0));
+    Matriz3 = new Array(filas).fill(0).map(() => new Array(columnas).fill(0));
+
+    smFilas = [];
+    smColumnas = [];
+    cont = 0;
   })
 }
