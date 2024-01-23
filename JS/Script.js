@@ -323,6 +323,20 @@ function n_decimalesAleatorios(min, max) {
 function compararNumeros(a, b) {
   return b - a;
 }
+function presionarEnter(idForm, idBtn,) {
+  let formulario = document.getElementById(idForm);
+  let boton = document.getElementById(idBtn);
+
+  // Agregar un evento de escucha de teclado al formulario
+  formulario.addEventListener('keypress', function (e) {
+    // Verificar si la tecla presionada es "Enter" (código 13)
+    if (e.key === 'Enter') {
+      // Disparar el clic en el botón
+      boton.click();
+    }
+  });
+
+}
 //------------------------------------------------------------
 function ejercicio1() {
   let opSuma = document.getElementById("opSuma");
@@ -388,6 +402,7 @@ function ejercicio1() {
 }
 
 function ejercicio2() {
+  presionarEnter('form-eje2', 'eje2_verify');
   let btnVerify = document.getElementById("eje2_verify");
 
   btnVerify.addEventListener("click", () => {
@@ -419,6 +434,7 @@ function ejercicio3(valor) {
 }
 
 function ejercicio4() {
+  presionarEnter('form-eje4', 'eje4_verify');
   let btnOrder = document.getElementById("eje4_verify");
   let menor;
   let medio;
@@ -470,7 +486,7 @@ function ejercicio4() {
 
 function ejercicio5() {
   let btnVerify = document.getElementById("eje5_verify");
-
+  presionarEnter('form-eje5', 'eje5_verify');
   btnVerify.addEventListener("click", () => {
     let N_1 = parseFloat(document.getElementById("Eje5_N1").value);
     let N_2 = parseFloat(document.getElementById("Eje5_N2").value);
@@ -498,7 +514,7 @@ function ejercicio5() {
 
 function ejercicio6() {
   let btnVerify = document.getElementById("eje6_verify");
-
+  presionarEnter('form-eje6', 'eje6_verify');
   btnVerify.addEventListener("click", () => {
     let N_1 = parseInt(document.getElementById("Eje6_N1").value);
     let N_2 = parseInt(document.getElementById("Eje6_N2").value);
@@ -538,7 +554,8 @@ function ejercicio8() {
   ocultar(bxCantRosas);
   ocultar(btnVerify2);
   ocultar(btnVerify3);
-
+  presionarEnter('form_venta-rosas', 'eje8_verify');
+  presionarEnter('bxCantidadRosas', 'eje8_verify2');
   btnVerify.addEventListener("click", () => {
     let optRadio = document.querySelector('input[name="colorR"]:checked');
 
@@ -620,7 +637,7 @@ function ejercicio8() {
 
 function ejercicio9() {
   let btnVerify = document.getElementById("eje9_verify");
-
+  presionarEnter('form-eje9', 'eje9_verify');
   btnVerify.addEventListener("click", () => {
     let productoVendido = parseInt(document.getElementById("Eje9_N1").value);
     let valorTotalVendido = parseInt(document.getElementById("Eje9_N2").value);
@@ -651,6 +668,7 @@ function ejercicio9() {
 }
 
 function ejercicio10() {
+  presionarEnter('form-eje10', 'eje10_verify');
   document.getElementById("eje10_verify").addEventListener("click", () => {
     let opcRadio = document.querySelector('input[name="colorAuto"]:checked');
 
@@ -702,6 +720,7 @@ function ejercicio10() {
 }
 
 function ejercicio11() {
+  presionarEnter('form-eje11', 'eje11_verify');
   document.getElementById("eje11_verify").addEventListener("click", () => {
     let valorFijo = 200;
     let msj = "";
@@ -716,6 +735,7 @@ function ejercicio11() {
 }
 
 function ejercicio12() {
+  presionarEnter('form-eje12', 'eje12_verify');
   document.getElementById("eje12_verify").addEventListener("click", () => {
     let valor = parseInt(document.getElementById("Eje12_N1").value);
     let numero_1 = 0;
@@ -758,6 +778,7 @@ function ejercicio12() {
 }
 
 function ejercicio13() {
+  presionarEnter('form-eje13', 'eje13_verify');
   document.getElementById("eje13_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje13_N1").value);
     if (isNaN(limite)) {
@@ -779,6 +800,7 @@ function ejercicio13() {
 }
 
 function ejercicio14() {
+  presionarEnter('form-eje14', 'eje14_verify');
   document.getElementById("eje14_verify").addEventListener("click", () => {
     let valor = parseInt(document.getElementById("Eje14_N1").value);
     if (isNaN(valor)) {
@@ -847,6 +869,7 @@ function ejercicio14() {
 }
 
 function ejercicio15() {
+  presionarEnter('form-eje15', 'eje15_verify');
   document.getElementById("eje15_verify").addEventListener("click", () => {
     let J = parseInt(document.getElementById("Eje15_N1").value);
     let K = parseInt(document.getElementById("Eje15_N2").value);
@@ -890,6 +913,7 @@ function ejercicio16() {
 }
 
 function ejercicio17() {
+  presionarEnter('form-eje17', 'eje17_verify');
   document.getElementById("eje17_verify").addEventListener("click", () => {
     let valor1 = parseInt(document.getElementById("Eje17_N1").value);
     let valor2 = parseInt(document.getElementById("Eje17_N2").value);
@@ -914,6 +938,7 @@ function ejercicio17() {
 }
 
 function ejercicio18() {
+  presionarEnter('form-eje18', 'eje18_verify');
   document.getElementById('eje18_verify').addEventListener('click', () => {
     let msj = '';
     let h;
@@ -931,6 +956,7 @@ function ejercicio18() {
 }
 
 function ejercicio19() {
+  presionarEnter('form-eje19', 'eje19_verify');
   document.getElementById("eje19_verify").addEventListener("click", () => {
     let valor = parseInt(document.getElementById("Eje19_N1").value);
     if (isNaN(valor)) {
@@ -948,6 +974,7 @@ function ejercicio19() {
 }
 
 function ejercicio20() {
+  presionarEnter('form-eje20', 'eje20_verify');
   document.getElementById("eje20_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje20_N1").value);
     if (isNaN(limite)) {
@@ -1017,6 +1044,7 @@ function ejercicio20() {
 }
 
 function ejercicio21() {
+  presionarEnter('form-eje21', 'eje21_verify');
   document.getElementById("eje21_verify").addEventListener("click", () => {
     let n1 = parseInt(document.getElementById("Eje21_N1").value);
     let n2 = parseInt(document.getElementById("Eje21_N2").value);
@@ -1030,6 +1058,7 @@ function ejercicio21() {
 }
 
 function ejercicio22() {
+  presionarEnter('form-eje22', 'eje22_verify');
   document.getElementById("eje22_verify").addEventListener("click", () => {
     let N_1 = parseFloat(document.getElementById("Eje22_N1").value);
     let N_2 = parseFloat(document.getElementById("Eje22_N2").value);
@@ -1064,6 +1093,7 @@ function ejercicio22() {
 }
 
 function ejercicio23() {
+  presionarEnter('form-eje23', 'eje23_verify');
   document.getElementById("eje23_verify").addEventListener("click", () => {
     let base = parseFloat(document.getElementById("Eje23_N1").value);
     let altura = parseFloat(document.getElementById("Eje23_N2").value);
@@ -1077,6 +1107,7 @@ function ejercicio23() {
 }
 
 function ejercicio24() {
+  presionarEnter('form-eje24', 'eje24_verify');
   document.getElementById("eje24_verify").addEventListener("click", () => {
     let radio = parseFloat(document.getElementById("Eje24_N1").value);
     if (isNaN(radio)) {
@@ -1091,6 +1122,7 @@ function ejercicio24() {
 }
 
 function ejercicio25() {
+  presionarEnter('form-eje25', 'eje25_verify');
   document.getElementById("eje25_verify").addEventListener("click", () => {
     let base = parseFloat(document.getElementById("Eje25_N1").value);
     let alturaTrg = parseFloat(document.getElementById("Eje25_N2").value);
@@ -1124,6 +1156,7 @@ function ejercicio25() {
 }
 
 function ejercicio26() {
+  presionarEnter('form-eje26', 'eje26_verify');
   document.getElementById("eje26_verify").addEventListener("click", () => {
     let hipotenusa = parseFloat(document.getElementById("Eje26_N1").value);
     let mdBase_radio = parseFloat(document.getElementById("Eje26_N2").value); //mdBase = CatetoA. mdBase*2 = baseTotal
@@ -1160,6 +1193,7 @@ function ejercicio26() {
 }
 
 function ejercicio27() {
+  presionarEnter('form-eje27', 'eje27_verify');
   document.getElementById("eje27_verify").addEventListener("click", () => {
     let litros = parseFloat(document.getElementById("Eje27_N1").value);
     let precio = parseFloat(document.getElementById("Eje27_N2").value);
@@ -1187,6 +1221,7 @@ function ejercicio27() {
 }
 
 function ejercicio28() {
+  presionarEnter('form-eje28', 'eje28_verify');
   document.getElementById("eje28_verify").addEventListener("click", () => {
     let X1 = parseInt(document.getElementById("Eje28_N1").value);
     let X2 = parseInt(document.getElementById("Eje28_N2").value);
@@ -1222,6 +1257,7 @@ function ejercicio28() {
 }
 
 function ejercicio29() {
+  presionarEnter('form-eje29', 'eje29_verify');
   document.getElementById("eje29_verify").addEventListener("click", () => {
     let telaM = parseFloat(document.getElementById("Eje29_N1").value);
     let telaP = 0;
@@ -1235,6 +1271,7 @@ function ejercicio29() {
 }
 
 function ejercicio30() {
+  presionarEnter('form-eje30', 'eje30_verify');
   document.getElementById("eje30_verify").addEventListener("click", () => {
     let altura = parseFloat(document.getElementById("Eje30_N1").value);
     let largo = parseFloat(document.getElementById("Eje30_N2").value);
@@ -1294,6 +1331,7 @@ function ejercicio32() {
 }
 
 function ejercicio33() {
+  presionarEnter('form-eje33', 'eje33_verify');
   document.getElementById("eje33_verify").addEventListener("click", () => {
     let cantLapices = parseInt(document.getElementById("Eje33_N1").value);
     let costoLapices = 0;
@@ -1317,6 +1355,7 @@ function ejercicio33() {
 }
 
 function ejercicio34() {
+  presionarEnter('form-eje34', 'eje34_verify');
   document.getElementById("eje34_verify").addEventListener("click", () => {
     let costoVestido = parseFloat(document.getElementById("Eje34_N1").value);
     let descuento = 0;
@@ -1386,6 +1425,7 @@ function ejercicio35() {
 }
 
 function ejercicio36() {
+  presionarEnter('form-eje36', 'eje36_verify');
   document.getElementById("eje36_verify").addEventListener("click", () => {
     let nPersonas = parseInt(document.getElementById("Eje36_N1").value);
     let costoPlato = 0;
@@ -1413,6 +1453,7 @@ function ejercicio36() {
 }
 
 function ejercicio37() {
+  presionarEnter('form-eje37', 'eje37_verify');
   document.getElementById("eje37_verify").addEventListener("click", () => {
     let KlUva = parseInt(document.getElementById("Eje37_N1").value);
     let opR1 = document.querySelector('input[name="tipo"]:checked');
@@ -1471,6 +1512,7 @@ function ejercicio37() {
 }
 
 function ejercicio38() {
+  presionarEnter('form-eje38', 'eje38_verify');
   document.getElementById("eje38_verify").addEventListener("click", () => {
     let cantEsts = parseInt(document.getElementById("Eje38_N1").value);
     let pagoAlumno = 0;
@@ -1490,7 +1532,7 @@ function ejercicio38() {
         pagoAlumno = 65.0;
       }
       pagoTotal = pagoAlumno * cantEsts;
-      insertTexto("res1-eje38", "Cantidad Estuduantes: <br>" + cantEsts);
+      insertTexto("res1-eje38", "Cantidad Estudiantes: <br>" + cantEsts);
       insertTexto(
         "res2-eje38",
         "Pago Estudiante: <br>" + pagoAlumno.toFixed(2)
@@ -1501,6 +1543,7 @@ function ejercicio38() {
 }
 
 function ejercicio39() {
+  presionarEnter('form-eje39', 'eje39_verify');
   document.getElementById("eje39_verify").addEventListener("click", () => {
     let tiempo = parseFloat(document.getElementById("Eje39_N1").value);
     let dia = document.getElementById("Eje39_N2").value;
@@ -1603,6 +1646,7 @@ function ejercicio39() {
 }
 
 function ejercicio40() {
+  presionarEnter('form-eje40', 'eje40_verify');
   document.getElementById("eje40_verify").addEventListener("click", () => {
     let TBus = document.querySelector('input[name = "tipoBus"]:checked');
     let opTBus = document.getElementsByName("tipoBus");
@@ -1660,6 +1704,7 @@ function ejercicio41() {
   let btnVerify = document.getElementById("eje41_verify");
   let btnReload = document.getElementById("eje41_reload");
   btnReload.style.display = "none";
+  presionarEnter('form-eje41', 'eje41_verify');
   btnVerify.addEventListener("click", () => {
     let cantidadCitas = parseInt(document.getElementById("Eje41_N1").value);
     let numCita = parseInt(document.getElementById("Eje41_N2").value);
@@ -1704,37 +1749,32 @@ function ejercicio41() {
           btnReload.style.display = "block";
           document.getElementById("Eje41_N1").disabled = true;
           document.getElementById("Eje41_N2").disabled = true;
-          btnReload.addEventListener("click", () => {
-            btnVerify.style.display = "block";
-            btnReload.style.display = "none";
-            document.getElementById("Eje41_N1").disabled = false;
-            document.getElementById("Eje41_N2").disabled = false;
-            document.getElementById("Eje41_N1").focus();
-            insertTexto("resFn-eje41", "");
-            insertTexto("res1-eje41", "");
-            insertTexto("res2-eje41", "");
-            insertTexto("res3-eje41", "");
-            insertTexto("res4-eje41", "");
-            totPagTratamiento = 0;
-          });
         }
         insertTexto("res-eje41", "");
-        insertTexto(
-          "res1-eje41",
-          "<b>Citas Restantes: </b><br>" + citasRestantes
-        );
+        insertTexto("res1-eje41", "<b>Citas Restantes: </b><br>" + citasRestantes);
         insertTexto("res2-eje41", "<b>Total Citas: </b><br>" + cantidadCitas);
         insertTexto("res3-eje41", "<b>Valor Cita: </b><br>$" + valorCita);
-        insertTexto(
-          "res4-eje41",
-          "<b>Valor Actual Tratamiento</b><br>$" + totPagTratamiento
-        );
+        insertTexto("res4-eje41", "<b>Valor Actual Tratamiento</b><br>$" + totPagTratamiento);
       }
     }
+  });
+  btnReload.addEventListener("click", () => {
+    btnVerify.style.display = "block";
+    btnReload.style.display = "none";
+    document.getElementById("Eje41_N1").disabled = false;
+    document.getElementById("Eje41_N2").disabled = false;
+    document.getElementById("Eje41_N1").focus();
+    insertTexto("resFn-eje41", "");
+    insertTexto("res1-eje41", "");
+    insertTexto("res2-eje41", "");
+    insertTexto("res3-eje41", "");
+    insertTexto("res4-eje41", "");
+    totPagTratamiento = 0;
   });
 }
 
 function ejercicio42() {
+  presionarEnter('form-eje42', 'eje42_verify');
   document.getElementById("eje42_verify").addEventListener("click", () => {
     let ubicacion = document.querySelector('input[name="zona"]:checked');
     let peso = parseFloat(document.getElementById("Eje42_N1").value);
@@ -1803,88 +1843,90 @@ function ejercicio43() {
   document.getElementById("eje43-radios-apl").style.display = "none";
   document.getElementById("eje43_verify2").style.display = "none";
   document.getElementById("eje43_verify3").style.display = "none";
+  presionarEnter('form-eje43', 'eje43_verify');
   document.getElementById("eje43_verify").addEventListener("click", () => {
     let cantTarjetas = parseInt(document.getElementById("Eje43_N1").value);
-    let msj = "";
-    for (var i = 0; i < cantTarjetas; i++) {
-      msj +=
-        '<div class="radios" id="eje43-radios' +
-        (i + 1) +
-        '"><label for="tipoTarjeta">Tipo de tarjeta ' +
-        (i + 1) +
-        '</label><section class="col rads"><input type="radio" name="tipoTarjeta' +
-        (i + 1) +
-        '" id="Eje43-' +
-        (i + 1) +
-        '_Op1" value="1"/><label for="Eje43-' +
-        (i + 1) +
-        '_Op1">1</label></section ><section class="col rads"><input type="radio" name="tipoTarjeta' +
-        (i + 1) +
-        '" id="Eje43-' +
-        (i + 1) +
-        '_Op2" value="2" /><label for="Eje43-' +
-        (i + 1) +
-        '_Op2">2</label></section><section class="col rads"><input type="radio" name="tipoTarjeta' +
-        (+i + 1) +
-        '" id="Eje43-' +
-        (i + 1) +
-        '_Op3" value="3" /><label for="Eje43-' +
-        (i + 1) +
-        '_Op3">3</label></section></div>';
-    }
-    document.getElementById("bx-tpTarjetas").innerHTML = msj;
-
-    document.getElementById("Eje43_N1").disabled = true;
-    document.getElementById("eje43_verify2").style.display = "block";
-    document.getElementById("eje43_verify").style.display = "none";
-
-    document.getElementById("eje43_verify2").addEventListener("click", () => {
-      document.getElementById("eje43-radios-apl").style.display = "block";
-      let opTpTarjeta = [];
-      let opSelectTpTarjeta;
-      let opSelect = [];
+    if (isNaN(cantTarjetas)) {
+      insertTexto("res-eje43", "Llene los campos");
+    } else {
+      let msj = "";
       for (var i = 0; i < cantTarjetas; i++) {
-        opTpTarjeta[i] = document.getElementsByName("tipoTarjeta" + (i + 1));
-
-        document.getElementById("eje43-radios" + (i + 1)).style.display =
-          "none";
-        document.getElementById("eje43_verify2").style.display = "none";
-        document.getElementById("eje43_verify3").style.display = "block";
+        msj +=
+          '<div class="radios" id="eje43-radios' +
+          (i + 1) +
+          '"><label for="tipoTarjeta">Tipo de tarjeta ' +
+          (i + 1) +
+          '</label><section class="col rads"><input type="radio" name="tipoTarjeta' +
+          (i + 1) +
+          '" id="Eje43-' +
+          (i + 1) +
+          '_Op1" value="1"/><label for="Eje43-' +
+          (i + 1) +
+          '_Op1">1</label></section ><section class="col rads"><input type="radio" name="tipoTarjeta' +
+          (i + 1) +
+          '" id="Eje43-' +
+          (i + 1) +
+          '_Op2" value="2" /><label for="Eje43-' +
+          (i + 1) +
+          '_Op2">2</label></section><section class="col rads"><input type="radio" name="tipoTarjeta' +
+          (+ i + 1) +
+          '" id="Eje43-' +
+          (i + 1) +
+          '_Op3" value="3" /><label for="Eje43-' +
+          (i + 1) +
+          '_Op3">3</label></section></div>';
       }
-      console.log(opTpTarjeta);
+      document.getElementById("bx-tpTarjetas").innerHTML = msj;
 
-      for (let i = 0; i < opTpTarjeta.length; i++) {
-        opSelectTpTarjeta = opTpTarjeta[i];
-        opSelect[i] = [];
-        for (let x = 0; x < opSelectTpTarjeta.length; x++) {
-          if (opSelectTpTarjeta[x].checked) {
-            opSelect[i].push(opSelectTpTarjeta[x].value);
-          }
+      document.getElementById("Eje43_N1").disabled = true;
+      document.getElementById("eje43_verify2").style.display = "block";
+      document.getElementById("eje43_verify").style.display = "none";
+    }
+  });
+  document.getElementById("eje43_verify2").addEventListener("click", () => {
+    document.getElementById("eje43-radios-apl").style.display = "block";
+    let opTpTarjeta = [];
+    let opSelectTpTarjeta;
+    let opSelect = [];
+    for (var i = 0; i < cantTarjetas; i++) {
+      opTpTarjeta[i] = document.getElementsByName("tipoTarjeta" + (i + 1));
+
+      document.getElementById("eje43-radios" + (i + 1)).style.display =
+        "none";
+      document.getElementById("eje43_verify2").style.display = "none";
+      document.getElementById("eje43_verify3").style.display = "block";
+    }
+
+    for (let i = 0; i < opTpTarjeta.length; i++) {
+      opSelectTpTarjeta = opTpTarjeta[i];
+      opSelect[i] = [];
+      for (let x = 0; x < opSelectTpTarjeta.length; x++) {
+        if (opSelectTpTarjeta[x].checked) {
+          opSelect[i].push(opSelectTpTarjeta[x].value);
         }
       }
-      console.log(opSelect);
-      let msj2 = "";
-      for (var i = 0; i < cantTarjetas; i++) {
-        msj2 +=
-          '<section class="col rads"><input type="radio" name="aplTarjeta" id="Eje43-' +
-          (i + 1) +
-          '_apl" value="' +
-          (i + 1) +
-          '" /><label for="Eje43-' +
-          (i + 1) +
-          '_apl">Tarjeta ' +
-          (i + 1) +
-          "</label></section>";
-      }
-      document.getElementById("bx-aplTarjetas").innerHTML = msj2;
+    }
 
-      document.getElementById("eje43_verify3").addEventListener("click", () => {
-        document.getElementById("eje43-radios-apl").style.display = "none";
-        document.getElementById("eje43_verify3").style.display = "none";
-        insertTexto("res1-eje43", "<b>Tipo Tarjeta: </b><br>");
-        insertTexto("res2-eje43", "<b>Limite Aplicado: </b><br>");
-      });
-    });
+    let msj2 = "";
+    for (var i = 0; i < cantTarjetas; i++) {
+      msj2 +=
+        '<section class="col rads"><input type="radio" name="aplTarjeta" id="Eje43-' +
+        (i + 1) +
+        '_apl" value="' +
+        (i + 1) +
+        '" /><label for="Eje43-' +
+        (i + 1) +
+        '_apl">Tarjeta ' +
+        (i + 1) +
+        "</label></section>";
+    }
+    document.getElementById("bx-aplTarjetas").innerHTML = msj2;
+  });
+  document.getElementById("eje43_verify3").addEventListener("click", () => {
+    document.getElementById("eje43-radios-apl").style.display = "none";
+    document.getElementById("eje43_verify3").style.display = "none";
+    insertTexto("res1-eje43", "<b>Tipo Tarjeta: </b><br>");
+    insertTexto("res2-eje43", "<b>Limite Aplicado: </b><br>");
   });
 }
 
@@ -1893,6 +1935,7 @@ function ejercicio44() {
   let btnGirar = document.getElementById("eje44_verify2");
   btnVolver.style.display = "none";
   btnGirar.style.display = "none";
+  presionarEnter('form-eje44', 'eje44_verify')
   document.getElementById("eje44_verify").addEventListener("click", () => {
     let valCompra = parseFloat(document.getElementById("Eje44_N1").value);
     let opGenero = document.querySelector('input[name="genero"]:checked');
@@ -2048,6 +2091,7 @@ function ejercicio46() {
 }
 
 function ejercicio47() {
+  presionarEnter('form-eje47', 'eje47_verify')
   document.getElementById("eje47_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje47_N1").value);
     if (isNaN(limite)) {
@@ -2069,6 +2113,7 @@ function ejercicio47() {
 }
 
 function ejercicio48() {
+  presionarEnter('form-eje48', 'eje48_verify')
   document.getElementById("eje48_verify").addEventListener("click", () => {
     let nPersonas = parseInt(document.getElementById("Eje48_N1").value);
     let valores;
@@ -2123,6 +2168,7 @@ function ejercicio49() {
       '" placeholder="Digite un número"/>';
   }
   insertTexto("form-eje49", msj);
+  presionarEnter('form-eje49', 'eje49_verify')
   document.getElementById("eje49_verify").addEventListener("click", () => {
     let valores = new Array();
     let suma = 0;
@@ -2148,6 +2194,7 @@ function ejercicio49() {
 }
 
 function ejercicio50() {
+  presionarEnter('form-eje50', 'eje50_verify')
   document.getElementById("eje50_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje50_N1").value);
     let num = 1;
@@ -2169,6 +2216,7 @@ function ejercicio50() {
 }
 
 function ejercicio51() {
+  presionarEnter('form-eje51', 'eje51_verify')
   document.getElementById("eje51_verify").addEventListener("click", () => {
     let valores = new Array();
     let v550 = new Array();
@@ -2222,6 +2270,7 @@ function ejercicio51() {
 }
 
 function ejercicio52() {
+  presionarEnter('form-eje52', 'eje52_verify')
   document.getElementById("eje52_verify").addEventListener("click", () => {
     let valores = new Array();
     let msj = "";
@@ -2243,6 +2292,8 @@ function ejercicio53() {
   let bxAlm = document.getElementById("Eje53_span");
   btn2.style.display = "none";
   btn3.style.display = "none";
+  presionarEnter('form-eje53', 'eje53_verify');
+  presionarEnter('form-eje53', 'eje53_verify2')
   btn1.addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje53_N1").value);
 
@@ -2304,6 +2355,7 @@ function ejercicio53() {
 }
 
 function ejercicio54() {
+  presionarEnter('form-eje54', 'eje54_verify')
   document.getElementById("eje54_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje54_N1").value);
     if (isNaN(limite)) {
@@ -2362,6 +2414,7 @@ function ejercicio55() {
   bx2.style.display = "none";
   bx3.style.display = "none";
 
+  presionarEnter('panel', 'eje55_verify')
   btn1.addEventListener("click", () => {
     btn5.style.display = "block";
     bx.style.display = "flex";
@@ -2444,6 +2497,7 @@ function ejercicio55() {
 }
 
 function ejercicio56() {
+  presionarEnter('form-eje56', 'eje56_verify')
   document.getElementById("eje56_verify").addEventListener("click", () => {
     let limite = parseInt(document.getElementById("Eje56_N1").value);
     if (isNaN(limite)) {
@@ -2486,6 +2540,8 @@ function ejercicio57() {
 
   bx1.style.display = "none";
   bxVolver.style.display = 'none';
+  presionarEnter('form-eje57', 'eje57_verify')
+  presionarEnter('bx-Hrs', 'eje57_verify2')
   btn1.addEventListener("click", () => {
     pagoHoras = parseFloat(document.getElementById("Eje57_N1").value);
     if (isNaN(pagoHoras)) {
@@ -2534,6 +2590,7 @@ function ejercicio57() {
 }
 
 function ejercicio58() {
+  presionarEnter('form-eje58', 'eje58_verify')
   document.getElementById('eje58_verify').addEventListener('click', () => {
     let bandera = true;
     let msj1 = '';
@@ -2558,6 +2615,7 @@ function ejercicio58() {
 }
 
 function ejercicio59() {
+  presionarEnter('form-eje59', 'eje59_verify')
   document.getElementById('eje59_verify').addEventListener('click', () => {
     let limite = parseInt(document.getElementById('Eje59_N1').value);
     if (isNaN(limite)) {
@@ -2632,6 +2690,8 @@ function ejercicio60() {
   let empleado = 1;
   let costo = 30000;
   let pago = 0;
+  presionarEnter('form-eje60', 'eje60_verify')
+  presionarEnter('box-mEjer60', 'eje60_verify2')
   btn1.addEventListener('click', () => {
     let horas = parseFloat(document.getElementById('Eje60_N1').value);
     if (isNaN(horas)) {
@@ -2695,7 +2755,7 @@ function ejercicio61() {
 
     document.getElementById('Eje61_N1').focus();
   })
-
+  presionarEnter('bx-registro', 'eje61_verify3')
   btnAgregar.addEventListener('click', () => {
     opcion = parseInt(document.getElementById('Eje61_N1').value);
     if (isNaN(opcion)) {
@@ -2786,6 +2846,7 @@ function ejercicio61() {
 }
 
 function ejercicio62() {
+  presionarEnter('form-eje62', "eje62_verify")
   document.getElementById('eje62_verify').addEventListener('click', () => {
     let valores = n_aleatorios(10);
     let msj = '';
@@ -2800,6 +2861,7 @@ function ejercicio62() {
 }
 
 function ejercicio63() {
+  presionarEnter('form-eje63', "eje63_verify")
   document.getElementById('eje63_verify').addEventListener('click', () => {
     let limite = parseInt(document.getElementById('Eje63_N1').value);
     if (isNaN(limite)) {
@@ -2830,6 +2892,7 @@ function ejercicio64() {
   let bxReload = document.getElementById('eje64_reload');
   let valores = new Array();
   bxReload.style.display = 'none';
+  presionarEnter('form-eje64', "eje64_verify")
   btn.addEventListener('click', () => {
     let valor = parseInt(document.getElementById('Eje64_N1').value);
 
@@ -2871,7 +2934,7 @@ function ejercicio65() {
   let bxValores = document.getElementById('eje65-valores');
   bxValores.style.display = 'none';
 
-  let bxForm = document.getElementById('for-eje65');
+  let bxForm = document.getElementById('form-eje65');
   let btnLimite = document.getElementById('eje65_verify');
   let btnAgregar = document.getElementById('eje65_verify2');
   let btnReload = document.getElementById('eje65_reload');
@@ -2887,7 +2950,8 @@ function ejercicio65() {
   let j = 0;
   let x = 0;
   let contValor = 1;
-
+  presionarEnter('form-eje65', "eje65_verify")
+  presionarEnter('eje65-valores', "eje65_verify2")
   btnLimite.addEventListener('click', () => {
     limite = parseInt(document.getElementById('Eje65_N1').value);
     if (isNaN(limite)) {
@@ -2966,6 +3030,7 @@ function ejercicio65() {
 }
 
 function ejercicio66() {
+  presionarEnter('form-eje66', "eje66_verify")
   document.getElementById('eje66_verify').addEventListener('click', () => {
     let valor = parseInt(document.getElementById('Eje66_N1').value);
     let valores = new Array();
@@ -3015,6 +3080,7 @@ function ejercicio67() {
     msj += valor + " ";
   }
   insertTexto('res-eje67', "<b>Vector Original</b><br>" + msj);
+  presionarEnter('form-eje67', "eje67_verify")
   document.getElementById('eje67_verify').addEventListener('click', () => {
     let nuevoVector = new Array();
     let msj2 = '';
@@ -3207,7 +3273,7 @@ function ejercicio71() {
 
     for (let f = 0; f < filas; f++) {
       smFilas.push(0);
-        smColumnas.push(0);
+      smColumnas.push(0);
       for (let c = 0; c < columnas; c++) {
         smFilas[f] += Matriz3[f][c];
         smColumnas[c] += Matriz3[f][c];
